@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Material Starter Kit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import the Material stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/bundle.css">
+</head>
+<body class="mdc-typography">
+<img class="logo"
+     src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg/1200px-Dungeons_%26_Dragons_5th_Edition_logo.svg.png"/>
+<div class="character-logo">
+    <div class="picture-desc">ZNAK/HERB</div>
+</div>
+<div class="character-portrait">
+    <div class="picture-desc">PORTRET POSTACI</div>
+</div>
+<h3>CHARACTER RECORD SHEETS</h3>
+<div class="base-info-row">
+    <div id="character-name-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="character-name" class="mdc-text-field__input">
+        <div id="character-name-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="character-name" class="mdc-floating-label">Imię postaci</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="player-name-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="player-name" class="mdc-text-field__input">
+        <div id="player-name-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="character-name" class="mdc-floating-label">Gracz</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+</div>
+<div class="base-info-row">
+    <div id="class-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="class" class="mdc-text-field__input">
+        <div id="class-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="class" class="mdc-floating-label">Klasa</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="level-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="level" class="mdc-text-field__input">
+        <div id="level-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="level" class="mdc-floating-label">Poziom</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="race-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="race" class="mdc-text-field__input">
+        <div id="race-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="race" class="mdc-floating-label">Rasa</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="character-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="character" class="mdc-text-field__input">
+        <div id="character-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="character" class="mdc-floating-label">Charakter</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="size-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="size" class="mdc-text-field__input">
+        <div id="size-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="size" class="mdc-floating-label">Rozmiar</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+</div>
+<div class="base-info-row">
+    <div id="sex-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="sex" class="mdc-text-field__input">
+        <div id="sex-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="sex" class="mdc-floating-label">Płeć</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="age-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="age" class="mdc-text-field__input">
+        <div id="age-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="age" class="mdc-floating-label">Wiek</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="height-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="height" class="mdc-text-field__input">
+        <div id="height-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="height" class="mdc-floating-label">Wzrost</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="weight-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="weight" class="mdc-text-field__input">
+        <div id="weight-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="weight" class="mdc-floating-label">Waga</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="eye-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="eye" class="mdc-text-field__input">
+        <div id="eye-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="eye" class="mdc-floating-label">Oczy</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="hair-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="hair" class="mdc-text-field__input">
+        <div id="hair-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="religion" class="mdc-floating-label">Włosy</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="skin-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="skin" class="mdc-text-field__input">
+        <div id="skin-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="skin" class="mdc-floating-label">Karnacja</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div id="religion-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+        <input type="text" id="religion" class="mdc-text-field__input">
+        <div id="religion-outline" class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+                <label for="religion" class="mdc-floating-label">Wiara</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+</div>
+<div class="first-row">
+    <div class="base-stats-grid">
+        <div class="base-stats-column">
+            <div class="base-stats-column-name first-column">Nazwa Cechy</div>
+            <div class="inverse-box">
+                <div class="abbr">SIŁ</div>
+                <div class="stat-name">siła</div>
+            </div>
+            <div class="inverse-box">
+                <div class="abbr">ZR</div>
+                <div class="stat-name">zręczność</div>
+            </div>
+            <div class="inverse-box">
+                <div class="abbr">BD</div>
+                <div class="stat-name">budowa</div>
+            </div>
+            <div class="inverse-box">
+                <div class="abbr">INT</div>
+                <div class="stat-name">intelekt</div>
+            </div>
+            <div class="inverse-box">
+                <div class="abbr">MD</div>
+                <div class="stat-name">mądrość</div>
+            </div>
+            <div class="inverse-box">
+                <div class="abbr">CHA</div>
+                <div class="stat-name">charyzma</div>
+            </div>
+        </div>
+        <div class="base-stats-column">
+            <div class="base-stats-column-name">Punkty Cechy</div>
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+        </div>
+        <div class="base-stats-column">
+            <div class="base-stats-column-name">Modyfikatory cechy</div>
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+        </div>
+        <div class="base-stats-column">
+            <div class="base-stats-column-name">Tymczasowe cechy</div>
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+        </div>
+        <div class="base-stats-column">
+            <div class="base-stats-column-name">Tymczasowe modyfikatory</div>
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+            <input class="stat-input" type="number">
+        </div>
+    </div>
+    <div class="initiative-column">
+        <div class="pw-kp-grid">
+            <div class="pw-kp-column">
+                <div class="inverse-box">
+                    <div class="abbr">PW</div>
+                    <div class="stat-name">p. wytrzymałości</div>
+                </div>
+                <div class="inverse-box">
+                    <div class="abbr">KP</div>
+                    <div class="stat-name">klasa pancerza</div>
+                </div>
+                <div class="inverse-box long-box">
+                    <div class="abbr">Ataki dotykowe</div>
+                    <div class="stat-name">wielkość + zręczność + magia + premie unikowe i odbicia</div>
+                </div>
+                <div class="inverse-box long-box">
+                    <div class="abbr">Nieprzygotowany</div>
+                    <div class="stat-name">bonus ze zbroi + magia + naturalna zbroja</div>
+                </div>
+            </div>
+            <div class="pw-kp-column">
+                <div>RAZEM</div>
+                <input class="stat-input first-box" type="number">
+                <input class="stat-input" type="number">
+                <input class="stat-input long-box" type="number">
+                <input class="stat-input long-box" type="number">
+            </div>
+        </div>
+        <div class="initiative-box inverse-box">
+            <div class="abbr">INICJATYWA</div>
+            <div class="stat-name">modyfikator</div>
+        </div>
+    </div>
+    <div class="current-pw-column">
+        <div class="current-pw-header">RANY/AKTUALNE PW</div>
+        <input class="stat-input current-pw-input">
+        <div class="kp-row">
+            <div class="kp-numbers">= 10 +</div>
+            <input class="stat-input" type="number">
+            <div class="kp-numbers">+</div>
+            <input class="stat-input" type="number">
+            <div class="kp-numbers">+</div>
+            <input class="stat-input" type="number">
+        </div>
+        <div class="kp-description-row">
+            <div class="kp-description">BONUS ZE ZBROI</div>
+            <div class="kp-description">BONUS Z TARCZY</div>
+            <div class="kp-description">MODYFIKATOR ZE ZRĘCZNOŚCI</div>
+        </div>
+        <div class="inverse-box">
+            <div class="abbr">BAZOWY ATAK</div>
+            <div class="stat-name">bonus</div>
+        </div>
+        <input class="stat-input current-pw-input">
+        <div class="initiative-row">
+            <input class="stat-input" type="number">
+            <div class="initiative-numbers">=</div>
+            <input class="stat-input" type="number">
+            <div class="initiative-numbers">+</div>
+            <input class="stat-input" type="number">
+        </div>
+        <div class="initiative-description-row">
+            <div class="initiative-description">RAZEM</div>
+            <div class="initiative-description">MODYFIKATOR ZE ZRĘCZNOŚCI</div>
+            <div class="initiative-description">INNE</div>
+        </div>
+    </div>
+    <div class="abilities-header-column">
+        <div class="inputs-section">
+            <div class="bruises-section">
+                <div class="bruises-header">STŁUCZENIA</div>
+                <input class="bruises-input stat-input" type="number">
+                <div class="kp-row">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                </div>
+                <div class="kp-description-row">
+                    <div class="kp-description">MODYFIKATOR Z ROZMIARU</div>
+                    <div class="kp-description">NATRUALNA ZBROJA</div>
+                    <div class="kp-description">INNE</div>
+                </div>
+            </div>
+            <div class="speed-section">
+                <div class="desc-row">
+                    <div class="desc">REDUKCJA OBRAŻEŃ</div>
+                    <div class="desc">KOŚCI ŻYCIA</div>
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input" type="number">
+                    <input class="stat-input" type="number">
+                </div>
+                <input class="stat-input speed-input" type="number">
+                <div class="speed-description">SZYBKOŚĆ</div>
+            </div>
+            <div class="resistances-section">
+                <div class="desc-row">
+                    <div class="desc">ODPORNOŚĆ MAGICZNA</div>
+                    <div class="desc">SZANSA CHYBIENIA W POSTAĆ</div>
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input" type="number">
+                    <input class="stat-input" type="number">
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input" type="number">
+                    <input class="stat-input" type="number">
+                </div>
+                <div class="desc-row">
+                    <div class="desc little-desc">OGRANICZENIE CZARÓW WTAJEMNICZEŃ</div>
+                    <div class="desc">KARA DO TESTÓW ZE ZBROI</div>
+                </div>
+            </div>
+        </div>
+        <div class="abilities-section">
+            <div class="abilities-header">
+                <div class="class-abilities-header">KLASOWE</div>
+                <div class="abilities-title">UMIEJĘTNOŚCI</div>
+                <div class="rang-desc">MAX/RANGA</div>
+                <input class="stat-input rang-input">
+                <div class="spare-points-desc">WOLNE PUNKTY</div>
+                <input class="spare-points-input stat-input" type="number">
+            </div>
+            <div class="abilities-table-header-row">
+                <div class="abilities-table-header-cell">NAZWA UMIEJĘTNOŚCI</div>
+                <div class="abilities-table-header-cell">CECHA</div>
+                <div class="abilities-table-header-cell">ŁĄCZNY MODYFIKATOR</div>
+                <div class="abilities-table-header-cell">MODYFIKATOR CECHY</div>
+                <div class="abilities-table-header-cell">RANGA</div>
+                <div class="abilities-table-header-cell">INNE</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="second-row">
+    <div class="left-column">
+        <div class="defensive-rolls-section">
+            <div class="roll-names-column">
+                <div>RZUTY OBRONNE</div>
+                <div class="inverse-box">
+                    <div class="abbr">WYTRWAŁOŚĆ</div>
+                    <div class="stat-name">(budowa)</div>
+                </div>
+                <div class="inverse-box">
+                    <div class="abbr">REFLEKS</div>
+                    <div class="stat-name">(zręczność)</div>
+                </div>
+                <div class="inverse-box">
+                    <div class="abbr">WOLA</div>
+                    <div class="stat-name">(mądrość)</div>
+                </div>
+            </div>
+            <div class="inputs-column">
+                <div class="names-row">
+                    <div class="name">RAZEM</div>
+                    <div class="name">BAZOWA OBRONA</div>
+                    <div class="name">MODYFIKATOR MAGICZNY</div>
+                    <div class="name">MODYFIKATOR CECHY</div>
+                    <div class="name">INNE</div>
+                    <div class="name">TYMCZASOWY MODYFIKATOR</div>
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">=</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">=</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">=</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                </div>
+            </div>
+            <div class="tmp-modifiers-column">
+                <div>MODYFIKATORY OKOLICZNOŚCIOWE</div>
+                <input class="stat-input huge-input">
+            </div>
+        </div>
+        <div class="attacks-section">
+            <div class="roll-names-column">
+                <div>ATAKI</div>
+                <div class="inverse-box">
+                    <div class="abbr">W ZWARCIU</div>
+                    <div class="stat-name">bonus ataku</div>
+                </div>
+                <div class="inverse-box">
+                    <div class="abbr">NA ODLEGŁOŚĆ</div>
+                    <div class="stat-name">bonus ataku</div>
+                </div>
+            </div>
+            <div class="inputs-column">
+                <div class="names-row">
+                    <div class="name long-name">RAZEM</div>
+                    <div class="name long-name">BAZOWY BONUS ATAKU</div>
+                    <div class="name">MODYFIKATOR Z SIŁY</div>
+                    <div class="name">MODYFIKATOR ROZMIARU</div>
+                    <div class="name">INNE</div>
+                    <div class="name">TYMCZASOWE MODYFIKATORY</div>
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input long-input" type="number">
+                    <div class="kp-numbers">=</div>
+                    <input class="stat-input long-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                </div>
+                <div class="inputs-row">
+                    <input class="stat-input long-input" type="number">
+                    <div class="kp-numbers">=</div>
+                    <input class="stat-input long-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                    <div class="kp-numbers">+</div>
+                    <input class="stat-input" type="number">
+                </div>
+            </div>
+        </div>
+
+        <div class="weapon-section">
+            <div class="weapon-row">
+                <div class="weapon-column big-column">
+                    <div class="weapon-header-cell big-cell long-cell">BROŃ</div>
+                    <input class="stat-input big-input">
+                </div>
+                <div class="weapon-column long-column">
+                    <div class="weapon-header-cell">ŁĄCZNY BONUS ATAKU</div>
+                    <input class="stat-input long-input">
+                </div>
+                <div class="weapon-column  short-column">
+                    <div class="weapon-header-cell">OBRAŻENIA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">KRYTYK</div>
+                    <input class="stat-input short-input">
+                </div>
+            </div>
+            <div class="weapon-row">
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">ZASIĘG</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WAGA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">RODZAJ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WIELKOŚĆ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column very-long-column">
+                    <div class="weapon-header-cell">SPECJALNE CECHY</div>
+                    <input class="stat-input very-long-input">
+                </div>
+            </div>
+        </div>
+        <div class="weapon-section">
+            <div class="weapon-row">
+                <div class="weapon-column big-column">
+                    <div class="weapon-header-cell big-cell long-cell">BROŃ</div>
+                    <input class="stat-input big-input">
+                </div>
+                <div class="weapon-column long-column">
+                    <div class="weapon-header-cell">ŁĄCZNY BONUS ATAKU</div>
+                    <input class="stat-input long-input">
+                </div>
+                <div class="weapon-column  short-column">
+                    <div class="weapon-header-cell">OBRAŻENIA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">KRYTYK</div>
+                    <input class="stat-input short-input">
+                </div>
+            </div>
+            <div class="weapon-row">
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">ZASIĘG</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WAGA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">RODZAJ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WIELKOŚĆ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column very-long-column">
+                    <div class="weapon-header-cell">SPECJALNE CECHY</div>
+                    <input class="stat-input very-long-input">
+                </div>
+            </div>
+        </div>
+        <div class="weapon-section">
+            <div class="weapon-row">
+                <div class="weapon-column big-column">
+                    <div class="weapon-header-cell big-cell long-cell">BROŃ</div>
+                    <input class="stat-input big-input">
+                </div>
+                <div class="weapon-column long-column">
+                    <div class="weapon-header-cell">ŁĄCZNY BONUS ATAKU</div>
+                    <input class="stat-input long-input">
+                </div>
+                <div class="weapon-column  short-column">
+                    <div class="weapon-header-cell">OBRAŻENIA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">KRYTYK</div>
+                    <input class="stat-input short-input">
+                </div>
+            </div>
+            <div class="weapon-row">
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">ZASIĘG</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WAGA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">RODZAJ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WIELKOŚĆ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column very-long-column">
+                    <div class="weapon-header-cell">SPECJALNE CECHY</div>
+                    <input class="stat-input very-long-input">
+                </div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="weapon-section armor-section">
+            <div class="weapon-row">
+                <div class="weapon-column big-column">
+                    <div class="weapon-header-cell big-cell long-cell">ZBROJA</div>
+                    <input class="stat-input big-input">
+                </div>
+                <div class="weapon-column long-column">
+                    <div class="weapon-header-cell">RODZAJ</div>
+                    <input class="stat-input long-input">
+                </div>
+                <div class="weapon-column  short-column">
+                    <div class="weapon-header-cell">PREMIA ZE ZBROI</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">MAX BONUS ZE ZR</div>
+                    <input class="stat-input short-input">
+                </div>
+            </div>
+            <div class="weapon-row">
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">KARA DO TESTU</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">NIEPOW. CZARU</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">SZYBKOŚĆ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WAGA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column very-long-column">
+                    <div class="weapon-header-cell">SPECJALNE CECHY</div>
+                    <input class="stat-input very-long-input">
+                </div>
+            </div>
+        </div>
+        <div class="weapon-section">
+            <div class="weapon-row">
+                <div class="weapon-column big-column">
+                    <div class="weapon-header-cell big-cell long-cell">TARCZA</div>
+                    <input class="stat-input big-input">
+                </div>
+                <div class="weapon-column long-column">
+                    <div class="weapon-header-cell">RODZAJ</div>
+                    <input class="stat-input long-input">
+                </div>
+                <div class="weapon-column  short-column">
+                    <div class="weapon-header-cell">BONUS OCHRONY</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">MAX BONUS ZE ZR</div>
+                    <input class="stat-input short-input">
+                </div>
+            </div>
+            <div class="weapon-row">
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">KARA DO TESTU</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">NIEPOW. CZARU</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">SZYBKOŚĆ</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column short-column">
+                    <div class="weapon-header-cell">WAGA</div>
+                    <input class="stat-input short-input">
+                </div>
+                <div class="weapon-column very-long-column">
+                    <div class="weapon-header-cell">SPECJALNE CECHY</div>
+                    <input class="stat-input very-long-input">
+                </div>
+            </div>
+        </div>
+        <div class="ammo-section">
+
+        </div>
+    </div>
+    <div class="abilities-column">
+
+    </div>
+</div>
+
+
+<!-- import the Material javascript file -->
+<script src="dist/bundle.js" async></script>
+</body>
+</html>

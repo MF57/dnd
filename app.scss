@@ -1,0 +1,590 @@
+// Material Theming
+
+// Define theme variables before importing any MDC Web component styles
+// $mdc-theme-primary: midnightblue;
+
+$redColor: #831114;
+$mdc-theme-primary: #831114;
+$mdc-theme-secondary: #feeae6;
+$mdc-theme-on-primary: #442b2d;
+$mdc-theme-on-secondary: #442b2d;
+
+
+// Import the styles for each MDC Web component
+@import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+@import "@material/textfield/helper-text/mdc-text-field-helper-text";
+@import "@material/notched-outline/mdc-notched-outline";
+
+// Check out the MDC Web documentation for how to use MDC Sass mixins:
+// https://github.com/material-components/material-components-web
+// .foo-button {
+//   @include mdc-button-ink-color(lightblue);
+//   @include mdc-states(lightblue);
+// }
+
+body {
+  background-image: url("http://backgrounddownload.com/wp-content/uploads/2018/09/background-papirus-6.jpg");
+  background-size: cover;
+  margin: 20px;
+  font-family: Roboto, sans-serif;
+}
+
+div, h3 {
+  font-family: Roboto, sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.logo {
+  height: 200px;
+}
+
+.character-portrait, .character-logo {
+  position: absolute;
+  border: 2px solid $redColor;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.character-portrait {
+  width: 300px;
+  height: 370px;
+  top: 10px;
+  right: 10px;
+}
+
+.character-logo {
+  width: 250px;
+  height: 320px;
+  top: 10px;
+  right: 320px;
+}
+
+.base-info-row {
+  display: flex;
+  margin: 40px 0;
+}
+
+.first-row, .pw-kp-grid, .desc-row {
+  display: flex;
+}
+
+.initiative-column, .current-pw-column, .abilities-header-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.long-input {
+  width: 500px;
+  margin-right: 20px;
+}
+
+.stat-input {
+  width: 50px;
+  height: 28px;
+  outline: none;
+  border: 1px solid $redColor;
+  margin: 2px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.inverse-box {
+  background-color: $redColor;
+  color: white;
+  text-align: center;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .stat-name {
+    font-size: 12px;
+  }
+}
+
+.base-stats-grid {
+  display: flex;
+  margin-right: 10px;
+
+  .base-stats-column {
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+
+    .base-stats-column-name {
+      font-size: 9px;
+      width: 50px;
+      text-align: center;
+    }
+
+    .base-stats-column-name.first-column {
+      width: 80px;
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.base-stats-grid .inverse-box {
+  width: 80px;
+  height: 34px;
+
+  .stat-name {
+    font-size: 12px;
+  }
+}
+
+.pw-kp-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+
+  .inverse-box {
+    width: 150px;
+    height: 34px;
+    padding: 0 5px;
+
+    .stat-name {
+      font-size: 10px;
+    }
+
+    &.long-box {
+      height: 45px;
+    }
+  }
+
+  .stat-input {
+    margin: 2px 0;
+
+    &.first-box {
+      margin-top: 5px;
+    }
+
+    &.long-box {
+      margin: 7px 0;
+    }
+  }
+
+  &:first-child {
+    padding-top: 22px;
+  }
+}
+
+.initiative-box.inverse-box {
+  width: 220px;
+  margin-top: 6px;
+  height: 38px;
+}
+
+.current-pw-column {
+  .current-pw-header {
+    text-align: center;
+  }
+
+  .stat-input.current-pw-input {
+    width: 250px;
+    margin-top: 5px;
+  }
+
+
+  .kp-description-row {
+    display: flex;
+
+    .kp-description {
+      width: 52px;
+      font-size: 7px;
+      text-align: center;
+      margin-left: 19px;
+
+      &:first-child {
+        margin-left: 58px;
+      }
+    }
+  }
+
+  .inverse-box {
+    width: 252px;
+    margin-top: 6px;
+    height: 38px;
+  }
+
+  .initiative-row {
+    display: flex;
+
+    .initiative-numbers {
+      font-size: 18px;
+      height: 30px;
+      line-height: 30px;
+      margin: 0 18px;
+    }
+  }
+
+  .initiative-description-row {
+    display: flex;
+
+    .initiative-description {
+      width: 52px;
+      font-size: 7px;
+      margin-right: 49px;
+      text-align: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.current-pw-column, .abilities-header-column {
+  .kp-row {
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 3px;
+
+    .kp-numbers {
+      font-size: 18px;
+      height: 30px;
+      line-height: 30px;
+
+      &:first-child {
+        margin-left: 2px;
+      }
+    }
+
+    .stat-input {
+      margin: 0 4px;
+    }
+  }
+}
+
+
+.abilities-header-column {
+  .inputs-section {
+    display: flex;
+
+    .bruises-section {
+      display: flex;
+      flex-direction: column;
+
+      .bruises-header {
+        text-align: center;
+      }
+
+      .stat-input.bruises-input {
+        width: 210px;
+        margin-top: 5px;
+      }
+
+      .kp-description-row {
+        display: flex;
+
+        .kp-description {
+          width: 52px;
+          font-size: 7px;
+          text-align: center;
+          margin-left: 19px;
+        }
+      }
+    }
+
+    .speed-section {
+      margin-left: 20px;
+
+      .desc-row {
+        margin-bottom: 2px;
+      }
+
+      .desc {
+        width: 52px;
+        font-size: 9px;
+        text-align: center;
+        margin-right: 5px;
+      }
+
+      .speed-input {
+        width: 108px;
+      }
+
+      .speed-description {
+        width: 110px;
+        text-align: center;
+        font-size: 10px;
+      }
+    }
+
+    .resistances-section {
+      margin-left: 20px;
+
+      .desc-row {
+        margin-bottom: 2px;
+      }
+
+      .desc {
+        width: 85px;
+        font-size: 9px;
+        text-align: center;
+        margin-right: 5px;
+
+        &.little-desc {
+          font-size: 7px;
+        }
+      }
+
+      .stat-input {
+        width: 85px;
+      }
+    }
+  }
+
+  .abilities-section {
+    display: flex;
+    flex-direction: column;
+
+    .abilities-header {
+      background-color: $redColor;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      width: 54vw;
+      border-top: 1px solid white;
+      position: relative;
+
+      .class-abilities-header {
+        position: absolute;
+        top: 63px;
+        left: -30px;
+        text-indent: 19px;
+        width: 80px;
+        color: white;
+        transform: rotate(270deg);
+        background-color: $redColor;
+
+      }
+
+      .abilities-title {
+        color: white;
+        font-size: 24px;
+        letter-spacing: 5px;
+        margin-left: 10vw;
+      }
+
+      .rang-desc {
+        margin-left: auto;
+        color: white;
+        margin-right: 10px;
+      }
+
+      .spare-points-desc {
+        color: white;
+        margin-left: 20px;
+        margin-right: 10px;
+      }
+
+      .spare-points-input {
+        margin-right: 20px;
+      }
+    }
+
+    .abilities-table-header-row {
+      display: flex;
+      width: 54vw;
+
+
+      .abilities-table-header-cell {
+        border: 1px solid $redColor;
+        border-left: none;
+        height: 51px;
+        line-height: 51px;
+        padding: 0 5px;
+        text-align: center;
+        min-width: 50px;
+
+        &:first-child {
+          flex-grow: 1;
+          border-left: 1px solid $redColor;
+        }
+      }
+    }
+  }
+}
+
+.second-row {
+  display: flex;
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+
+    .defensive-rolls-section, .attacks-section {
+      display: flex;
+      margin-top: 20px;
+
+      .roll-names-column {
+        display: flex;
+        flex-direction: column;
+
+        .inverse-box {
+          height: 40px;
+        }
+      }
+
+      .inputs-column {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .names-row {
+          display: flex;
+          margin-bottom: 7px;
+          .name {
+            width: 52px;
+            font-size: 7px;
+            text-align: center;
+            margin-right: 22px;
+
+            &.long-name {
+              width: 141px;
+              font-size: 9px;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .inputs-row {
+          display: flex;
+          margin-bottom: 7px;
+
+          .kp-numbers {
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            margin: 0 5px;
+          }
+
+          .stat-input.long-input {
+            width: 138px;
+          }
+        }
+      }
+
+      .tmp-modifiers-column {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        div {
+          font-size: 12px;
+          text-align: center;
+        }
+
+        .stat-input.huge-input {
+          width: 222px;
+          height: 123px;
+        }
+      }
+    }
+
+    .defensive-rolls-section .roll-names-column .inverse-box {
+      width: 140px;
+    }
+
+
+    .attacks-section .roll-names-column .inverse-box {
+      width: 200px;
+    }
+
+    .weapon-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      width: 813px;
+
+      .weapon-row {
+        display: flex;
+        align-items: flex-end;
+
+
+        .weapon-column {
+          display: flex;
+          flex-direction: column;
+
+          .weapon-header-cell {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: $redColor;
+            color: white;
+            border-right: 1px solid white;
+            text-align: center;
+            box-sizing: border-box;
+          }
+
+          .weapon-header-cell.big-cell.long-cell {
+            height: 60px;
+            line-height: 60px;
+            background-color: $redColor;
+            font-size: 20px;
+          }
+
+          &.big-column {
+            flex-grow: 0.85;
+          }
+
+          &.very-long-column {
+            flex-grow: 0.55;
+          }
+
+          &.long-column {
+            flex-grow: 0.35;
+          }
+
+          &.short-column {
+            flex-grow: 0.15;
+          }
+
+          .stat-input {
+            border-top: none;
+            border-left: none;
+            border-right: 1px solid $redColor;
+            border-bottom: 1px solid $redColor;
+            height: 38px;
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          &:first-child {
+            .stat-input, .weapon-header-cell {
+              border-left: 1px solid $redColor;
+            }
+          }
+
+          &:last-child {
+            .weapon-header-cell {
+              border-right: 1px solid $redColor;
+            }
+          }
+        }
+      }
+
+      &.armor-section {
+        margin-top: 90px;
+      }
+    }
+  }
+}
+
