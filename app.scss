@@ -585,6 +585,56 @@ input[type=number]::-webkit-outer-spin-button {
         margin-top: 90px;
       }
     }
+
+    .ammo-section {
+      margin-top: 50px;
+      display: flex;
+
+      .standard-ammo-column, .magic-ammo-column {
+        display: flex;
+        flex-direction: column;
+
+        .column-title {
+          text-align: center;
+        }
+
+        .ammo-set-wrapper {
+          display: flex;
+          margin-top: 15px;
+
+          .stat-input {
+            height: 40px;
+            width: 200px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+          }
+
+          .ammo-set {
+            margin-left: 17px;
+            display: flex;
+
+            .ammo-column {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+          }
+
+          .ammo-box {
+            width: 12px;
+            height: 12px;
+            border: 1px solid $redColor;
+            margin: 1px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .standard-ammo-column {
+        margin-right: 22px;
+      }
+    }
   }
 }
 
