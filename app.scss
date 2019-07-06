@@ -1044,13 +1044,21 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
   }
 
-  .base-info-row, .first-row, .second-row, .character-logo, .character-portrait {
+  .base-info-row, .first-row, .second-row {
     display: none;
   }
 
   .logo {
     width: 100%;
     height: initial;
+    margin-bottom: 20px;
+  }
+
+  .character-portrait, .character-logo {
+    position: relative;
+    top: initial;
+    right: initial;
+    margin: auto auto 20px;
   }
 
   h3 {
