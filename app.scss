@@ -934,6 +934,32 @@ input[type=number]::-webkit-outer-spin-button {
               }
             }
           }
+
+          .languages-section {
+            margin-top: 14px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .language-header {
+              width: 100%;
+              text-align: center;
+              color: white;
+              background-color: $redColor;
+              height: 40px;
+              line-height: 40px;
+            }
+
+            .stat-input {
+              margin-top: 0;
+              margin-bottom: 0;
+              border-top: none;
+              width: 100%;
+              padding: 0;
+              box-sizing: border-box;
+            }
+
+          }
         }
 
         .known-spells-column {
@@ -941,6 +967,51 @@ input[type=number]::-webkit-outer-spin-button {
           margin-left: 10px;
           display: flex;
           flex-direction: column;
+
+          .known-spells-desc {
+            width: 100%;
+            text-align: center;
+            margin: 5px 0;
+          }
+
+          .known-spells-number-grid {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            .known-spells-number-column {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+
+          .known-spells-grid {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+
+            .memorized-spells-column, .learned-spells-column {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 50%;
+
+              .stat-input {
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                border-top: none;
+
+                &:nth-child(2) {
+                  border-top: 1px solid $redColor;
+                }
+              }
+            }
+          }
         }
 
       }
