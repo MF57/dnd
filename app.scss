@@ -1044,9 +1044,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
   }
 
-  .first-row, .second-row {
-    display: none;
-  }
 
   .logo {
     width: 100%;
@@ -1078,6 +1075,21 @@ input[type=number]::-webkit-outer-spin-button {
 
     .mdc-text-field {
       margin-bottom: 20px;
+    }
+  }
+
+  .second-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .left-column, .abilities-column {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .abilities-column {
+      margin-left: 0;
     }
   }
 
