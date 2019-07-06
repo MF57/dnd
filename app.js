@@ -1,6 +1,7 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCNotchedOutline} from '@material/notched-outline';
-
+import {MDCFormField} from '@material/form-field';
+import {MDCCheckbox} from '@material/checkbox';
 
 const textFields = [
     "#character-name-textfield",
@@ -40,5 +41,10 @@ const notches = [
 
 textFields.forEach(textField => new MDCTextField(document.querySelector(textField)));
 notches.forEach(notch => new MDCNotchedOutline(document.querySelector(notch)));
+
+
+const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
+const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
+formField.input = checkbox;
 
 

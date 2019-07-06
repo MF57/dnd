@@ -16,6 +16,8 @@ $mdc-theme-on-secondary: #442b2d;
 @import "@material/textfield/mdc-text-field";
 @import "@material/textfield/helper-text/mdc-text-field-helper-text";
 @import "@material/notched-outline/mdc-notched-outline";
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
@@ -39,6 +41,12 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.mdc-checkbox {
+  @include mdc-checkbox-container-colors($redColor, transparent, $redColor, $redColor);
+  @include mdc-checkbox-ink-color(white);
+  @include mdc-states-base-color($redColor)
 }
 
 .logo {
@@ -345,77 +353,6 @@ input[type=number]::-webkit-outer-spin-button {
       }
     }
   }
-
-  .abilities-section {
-    display: flex;
-    flex-direction: column;
-
-    .abilities-header {
-      background-color: $redColor;
-      display: flex;
-      align-items: center;
-      height: 60px;
-      width: 54vw;
-      border-top: 1px solid white;
-      position: relative;
-
-      .class-abilities-header {
-        position: absolute;
-        top: 63px;
-        left: -30px;
-        text-indent: 19px;
-        width: 80px;
-        color: white;
-        transform: rotate(270deg);
-        background-color: $redColor;
-
-      }
-
-      .abilities-title {
-        color: white;
-        font-size: 24px;
-        letter-spacing: 5px;
-        margin-left: 10vw;
-      }
-
-      .rang-desc {
-        margin-left: auto;
-        color: white;
-        margin-right: 10px;
-      }
-
-      .spare-points-desc {
-        color: white;
-        margin-left: 20px;
-        margin-right: 10px;
-      }
-
-      .spare-points-input {
-        margin-right: 20px;
-      }
-    }
-
-    .abilities-table-header-row {
-      display: flex;
-      width: 54vw;
-
-
-      .abilities-table-header-cell {
-        border: 1px solid $redColor;
-        border-left: none;
-        height: 51px;
-        line-height: 51px;
-        padding: 0 5px;
-        text-align: center;
-        min-width: 50px;
-
-        &:first-child {
-          flex-grow: 1;
-          border-left: 1px solid $redColor;
-        }
-      }
-    }
-  }
 }
 
 .second-row {
@@ -446,6 +383,7 @@ input[type=number]::-webkit-outer-spin-button {
         .names-row {
           display: flex;
           margin-bottom: 7px;
+
           .name {
             width: 52px;
             font-size: 7px;
@@ -635,6 +573,130 @@ input[type=number]::-webkit-outer-spin-button {
         margin-right: 22px;
       }
     }
+  }
+
+  .abilities-column {
+    margin-left: 3px;
+
+    .abilities-section {
+      display: flex;
+      flex-direction: column;
+
+      .abilities-header {
+        background-color: $redColor;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        width: 54vw;
+        border-top: 1px solid white;
+        position: relative;
+
+        .class-abilities-header {
+          position: absolute;
+          top: 42px;
+          left: -30px;
+          text-indent: 19px;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          color: white;
+          transform: rotate(270deg);
+          background-color: $redColor;
+
+        }
+
+        .abilities-title {
+          color: white;
+          font-size: 24px;
+          letter-spacing: 5px;
+          margin-left: 10vw;
+        }
+
+        .rang-desc {
+          margin-left: auto;
+          color: white;
+          margin-right: 10px;
+        }
+
+        .spare-points-desc {
+          color: white;
+          margin-left: 20px;
+          margin-right: 10px;
+        }
+
+        .spare-points-input {
+          margin-right: 20px;
+        }
+      }
+
+      .abilities-table {
+        display: flex;
+
+        .abilities-table-column {
+          display: flex;
+          flex-direction: column;
+
+          .abilities-table-header-cell {
+            border: 1px solid $redColor;
+            border-left: none;
+            height: 51px;
+            line-height: 51px;
+            padding: 0 5px;
+            text-align: center;
+            min-width: 50px;
+          }
+
+          &:first-child {
+            flex-grow: 1;
+          }
+
+          .abilities-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .stat-input {
+              flex-grow: 1;
+              margin-left: 10px;
+            }
+
+            &.first-cell {
+              align-items: center;
+              justify-content: flex-start;
+            }
+
+            .normal-ability-box {
+              width: 12px;
+              height: 12px;
+              background-color: $redColor;
+              margin-left: 10px;
+              margin-right: 10px;
+            }
+
+            .exclusive-ability-circle {
+              width: 12px;
+              height: 12px;
+              border: 1px solid $redColor;
+              border-radius: 6px;
+              margin-left: 10px;
+              margin-right: 10px;
+            }
+          }
+
+          .ability-name, .ability-trait, .kp-numbers {
+            line-height: 40px;
+            font-size: 18px;
+          }
+
+          .ability-trait {
+            text-align: center;
+            justify-content: center;
+          }
+        }
+      }
+
+    }
+
   }
 }
 
