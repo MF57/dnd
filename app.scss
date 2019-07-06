@@ -1000,6 +1000,10 @@ input[type=number]::-webkit-outer-spin-button {
               align-items: center;
               width: 50%;
 
+              .spells-column-header {
+                text-align: center;
+              }
+
               .stat-input {
                 width: 100%;
                 margin-top: 0;
@@ -1016,6 +1020,91 @@ input[type=number]::-webkit-outer-spin-button {
 
       }
     }
+
+  }
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+  html {
+    width: 100%;
+  }
+
+  .base-info-row, .first-row, .second-row, .character-logo, .character-portrait {
+    display: none;
+  }
+
+  .logo {
+    width: 100%;
+    height: initial;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .third-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .left-column, .right-column {
+      width: 100%;
+      margin-bottom: 20px;
+
+      .magic-section .magic-grid {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+        .magic-defense-column, .known-spells-column {
+          width: 100%;
+
+          .known-spells-number-grid {
+            flex-direction: column;
+
+            .known-spells-number-column {
+              width: 100%;
+              .stat-input {
+                width: 100%;
+                padding: 0;
+                box-sizing: border-box;
+              }
+            }
+          }
+
+          .known-spells-grid {
+            .learned-spells-column {
+              .spells-column-header {
+                height: 39px;
+                line-height: 39px;
+              }
+            }
+
+            .stat-input {
+              padding: 0;
+              box-sizing: border-box;
+            }
+          }
+        }
+
+        .known-spells-column {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .right-column {
+      margin-left: 0;
+    }
+
 
   }
 }
