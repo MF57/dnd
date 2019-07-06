@@ -768,3 +768,62 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
+.third-row {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    .equipment-section {
+      width: 100%;
+
+      .equipment-header {
+        width: 100%;
+        text-align: center;
+        color: white;
+        background-color: $redColor;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      .equipment-inputs {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .stat-input {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-top: none;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin-left: 4%;
+
+    .special-section {
+      width: 100%;
+
+      .special-header {
+        width: 100%;
+        text-align: center;
+        color: white;
+        background-color: $redColor;
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
