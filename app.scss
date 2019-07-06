@@ -859,6 +859,93 @@ input[type=number]::-webkit-outer-spin-button {
         }
       }
     }
+
+
+    .magic-section {
+      margin-top: 40px;
+      width: 100%;
+
+      .magic-header {
+        width: 100%;
+        text-align: center;
+        color: white;
+        background-color: $redColor;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      .magic-grid {
+        width: 100%;
+        display: flex;
+
+        .magic-defense-column {
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+
+          .modifier-row {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+
+            .modifier-description {
+              color: white;
+              background-color: $redColor;
+              flex-grow: 1;
+              margin-right: 10px;
+              height: 60px;
+              line-height: 30px;
+              font-size: 20px;
+              text-align: center;
+            }
+          }
+
+          .defensive-rolls-description {
+            margin-top: 30px;
+          }
+
+          .magic-defense-grid {
+            display: flex;
+            width: 100%;
+            margin-top: 5px;
+
+            .defensive-roll-column, .level-column, .spells-by-day-column, .premium-spells-column {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 25%;
+
+              .column-header {
+                text-align: center;
+              }
+
+              .level {
+                font-size: 24px;
+                height: 36px;
+                line-height: 36px;
+              }
+            }
+
+            .level-column {
+              .column-header {
+                text-align: center;
+                height: 38px;
+                line-height: 38px;
+              }
+            }
+          }
+        }
+
+        .known-spells-column {
+          width: calc(60% - 10px);
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+
+      }
+    }
+
   }
 }
 
