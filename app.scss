@@ -1024,7 +1024,14 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-
+@media only screen and (max-width: 370px) {
+  .learned-spells-column {
+    .spells-column-header {
+      height: 39px;
+      line-height: 39px;
+    }
+  }
+}
 
 
 
@@ -1081,13 +1088,6 @@ input[type=number]::-webkit-outer-spin-button {
           }
 
           .known-spells-grid {
-            .learned-spells-column {
-              .spells-column-header {
-                height: 39px;
-                line-height: 39px;
-              }
-            }
-
             .stat-input {
               padding: 0;
               box-sizing: border-box;
