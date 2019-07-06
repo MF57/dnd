@@ -1044,7 +1044,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
   }
 
-  .base-info-row, .first-row, .second-row {
+  .first-row, .second-row {
     display: none;
   }
 
@@ -1063,6 +1063,22 @@ input[type=number]::-webkit-outer-spin-button {
 
   h3 {
     text-align: center;
+  }
+
+  .base-info-row {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    .long-input {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .mdc-text-field {
+      margin-bottom: 20px;
+    }
   }
 
   .third-row {
