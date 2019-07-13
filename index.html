@@ -269,10 +269,10 @@
             </div>
             <div class="pw-kp-column">
                 <div>RAZEM</div>
-                <input class="stat-input first-box" type="number">
-                <input class="stat-input" type="number">
-                <input class="stat-input long-box" type="number">
-                <input class="stat-input long-box" type="number">
+                <input id="hp-total" class="stat-input first-box" type="number">
+                <input id="armor-class-total" class="stat-input" type="number">
+                <input id="touch-attack-total" class="stat-input long-box" type="number">
+                <input id="suprise-attack-total" class="stat-input long-box" type="number">
             </div>
         </div>
         <div class="initiative-box inverse-box">
@@ -282,14 +282,14 @@
     </div>
     <div class="current-pw-column">
         <div class="current-pw-header">RANY/AKTUALNE PW</div>
-        <input class="stat-input current-pw-input">
+        <input id="hp-current" class="stat-input current-pw-input">
         <div class="kp-row">
             <div class="kp-numbers">= 10 +</div>
-            <input class="stat-input" type="number">
+            <input id="armor-class-armor-bonus" class="stat-input" type="number">
             <div class="kp-numbers">+</div>
-            <input class="stat-input" type="number">
+            <input id="armor-class-shield-bonus" class="stat-input" type="number">
             <div class="kp-numbers">+</div>
-            <input class="stat-input" type="number">
+            <input id="armor-class-agility-modifier" class="stat-input" type="number">
         </div>
         <div class="kp-description-row">
             <div class="kp-description">BONUS ZE ZBROI</div>
@@ -300,13 +300,13 @@
             <div class="abbr">BAZOWY ATAK</div>
             <div class="stat-name">bonus</div>
         </div>
-        <input class="stat-input current-pw-input">
+        <input id="base-attack-bonus" class="stat-input current-pw-input">
         <div class="initiative-row">
-            <input class="stat-input" type="number">
+            <input id="initiative-total" class="stat-input" type="number">
             <div class="initiative-numbers">=</div>
-            <input class="stat-input" type="number">
+            <input id="initiative-agility-modifier" class="stat-input" type="number">
             <div class="initiative-numbers">+</div>
-            <input class="stat-input" type="number">
+            <input id="initiative-other" class="stat-input" type="number">
         </div>
         <div class="initiative-description-row">
             <div class="initiative-description">RAZEM</div>
@@ -318,14 +318,14 @@
         <div class="inputs-section">
             <div class="bruises-section">
                 <div class="bruises-header">STŁUCZENIA</div>
-                <input class="bruises-input stat-input" type="number">
+                <input id="bruises" class="bruises-input stat-input" type="number">
                 <div class="kp-row">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="armor-class-size-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="armor-class-natural-armor" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="armor-class-other" class="stat-input" type="number">
                 </div>
                 <div class="kp-description-row">
                     <div class="kp-description">MODYFIKATOR Z ROZMIARU</div>
@@ -339,10 +339,10 @@
                     <div class="desc">KOŚCI ŻYCIA</div>
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input" type="number">
-                    <input class="stat-input" type="number">
+                    <input id="damage-reduction" class="stat-input" type="number">
+                    <input id="life-dices" class="stat-input" type="number">
                 </div>
-                <input class="stat-input speed-input" type="number">
+                <input id="speed" class="stat-input speed-input" type="number">
                 <div class="speed-description">SZYBKOŚĆ</div>
             </div>
             <div class="resistances-section">
@@ -351,12 +351,12 @@
                     <div class="desc">SZANSA CHYBIENIA W POSTAĆ</div>
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input" type="number">
-                    <input class="stat-input" type="number">
+                    <input id="magic-resistance" class="stat-input" type="number">
+                    <input id="miss-chance" class="stat-input" type="number">
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input" type="number">
-                    <input class="stat-input" type="number">
+                    <input id="spells-limitation" class="stat-input" type="number">
+                    <input id="armor-penalty" class="stat-input" type="number">
                 </div>
                 <div class="desc-row">
                     <div class="desc little-desc">OGRANICZENIE CZARÓW WTAJEMNICZEŃ</div>
@@ -394,48 +394,48 @@
                     <div class="name">TYMCZASOWY MODYFIKATOR</div>
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input" type="number">
+                    <input id="defensive-endurance-total" class="stat-input" type="number">
                     <div class="kp-numbers">=</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-endurance-base-defense" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-endurance-magic-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-endurance-trait-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-endurance-other" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-endurance-tmp-modifier" class="stat-input" type="number">
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input" type="number">
+                    <input id="defensive-reflex-total" class="stat-input" type="number">
                     <div class="kp-numbers">=</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-reflex-base-defense" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-reflex-magic-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-reflex-trait-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-reflex-other" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-reflex-tmp-modifier" class="stat-input" type="number">
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input" type="number">
+                    <input id="defensive-will-total" class="stat-input" type="number">
                     <div class="kp-numbers">=</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-will-base-defense" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-will-magic-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-will-trait-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-will-other" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="defensive-will-tmp-modifier" class="stat-input" type="number">
                 </div>
             </div>
             <div class="tmp-modifiers-column">
                 <div>MODYFIKATORY OKOLICZNOŚCIOWE</div>
-                <input class="stat-input huge-input">
+                <input id="defensive-special-modifier" class="stat-input huge-input">
             </div>
         </div>
         <div class="attacks-section">
@@ -460,30 +460,30 @@
                     <div class="name">TYMCZASOWE MODYFIKATORY</div>
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input long-input" type="number">
+                    <input id="melee-attack-total" class="stat-input long-input" type="number">
                     <div class="kp-numbers">=</div>
-                    <input class="stat-input long-input" type="number">
+                    <input id="melee-attack-base-bonus" class="stat-input long-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="melee-attack-strength-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="melee-attack-size-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="melee-attack-other" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="melee-attack-tmp-modifier" class="stat-input" type="number">
                 </div>
                 <div class="inputs-row">
-                    <input class="stat-input long-input" type="number">
+                    <input id="distance-attack-total" class="stat-input long-input" type="number">
                     <div class="kp-numbers">=</div>
-                    <input class="stat-input long-input" type="number">
+                    <input id="distance-attack-base-bonus" class="stat-input long-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="distance-attack-agility-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="distance-attack-size-modifier" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="distance-attack-other" class="stat-input" type="number">
                     <div class="kp-numbers">+</div>
-                    <input class="stat-input" type="number">
+                    <input id="distance-attack-tmp-modifier" class="stat-input" type="number">
                 </div>
             </div>
         </div>
@@ -492,41 +492,41 @@
             <div class="weapon-row">
                 <div class="weapon-column big-column">
                     <div class="weapon-header-cell big-cell long-cell">BROŃ</div>
-                    <input class="stat-input big-input">
+                    <input id="weapon1-name" class="stat-input big-input">
                 </div>
                 <div class="weapon-column long-column">
                     <div class="weapon-header-cell">ŁĄCZNY BONUS ATAKU</div>
-                    <input class="stat-input long-input">
+                    <input id="weapon1-total-attack-bonus" class="stat-input long-input">
                 </div>
                 <div class="weapon-column  short-column">
                     <div class="weapon-header-cell">OBRAŻENIA</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon1-damage" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">KRYTYK</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon1-crit" class="stat-input short-input">
                 </div>
             </div>
             <div class="weapon-row">
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">ZASIĘG</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon1-range" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WAGA</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon1-weight" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">RODZAJ</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon1-kind" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WIELKOŚĆ</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon1-size" class="stat-input short-input">
                 </div>
                 <div class="weapon-column very-long-column">
                     <div class="weapon-header-cell">SPECJALNE CECHY</div>
-                    <input class="stat-input very-long-input">
+                    <input id="weapon1-special" class="stat-input very-long-input">
                 </div>
             </div>
         </div>
@@ -534,41 +534,41 @@
             <div class="weapon-row">
                 <div class="weapon-column big-column">
                     <div class="weapon-header-cell big-cell long-cell">BROŃ</div>
-                    <input class="stat-input big-input">
+                    <input id="weapon2-name" class="stat-input big-input">
                 </div>
                 <div class="weapon-column long-column">
                     <div class="weapon-header-cell">ŁĄCZNY BONUS ATAKU</div>
-                    <input class="stat-input long-input">
+                    <input id="weapon2-total-attack-bonus" class="stat-input long-input">
                 </div>
                 <div class="weapon-column  short-column">
                     <div class="weapon-header-cell">OBRAŻENIA</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon2-damage" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">KRYTYK</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon2-crit" class="stat-input short-input">
                 </div>
             </div>
             <div class="weapon-row">
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">ZASIĘG</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon2-range" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WAGA</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon2-weight" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">RODZAJ</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon2-kind" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WIELKOŚĆ</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon2-size" class="stat-input short-input">
                 </div>
                 <div class="weapon-column very-long-column">
                     <div class="weapon-header-cell">SPECJALNE CECHY</div>
-                    <input class="stat-input very-long-input">
+                    <input id="weapon2-special" class="stat-input very-long-input">
                 </div>
             </div>
         </div>
@@ -576,84 +576,85 @@
             <div class="weapon-row">
                 <div class="weapon-column big-column">
                     <div class="weapon-header-cell big-cell long-cell">BROŃ</div>
-                    <input class="stat-input big-input">
+                    <input id="weapon3-name" class="stat-input big-input">
                 </div>
                 <div class="weapon-column long-column">
                     <div class="weapon-header-cell">ŁĄCZNY BONUS ATAKU</div>
-                    <input class="stat-input long-input">
+                    <input id="weapon3-total-attack-bonus" class="stat-input long-input">
                 </div>
                 <div class="weapon-column  short-column">
                     <div class="weapon-header-cell">OBRAŻENIA</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon3-damage" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">KRYTYK</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon3-crit" class="stat-input short-input">
                 </div>
             </div>
             <div class="weapon-row">
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">ZASIĘG</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon3-range" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WAGA</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon3-weight" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">RODZAJ</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon3-kind" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WIELKOŚĆ</div>
-                    <input class="stat-input short-input">
+                    <input id="weapon3-size" class="stat-input short-input">
                 </div>
                 <div class="weapon-column very-long-column">
                     <div class="weapon-header-cell">SPECJALNE CECHY</div>
-                    <input class="stat-input very-long-input">
+                    <input id="weapon3-special" class="stat-input very-long-input">
                 </div>
             </div>
+        </div>
         </div>
         <div class="spacer"></div>
         <div class="weapon-section armor-section">
             <div class="weapon-row">
                 <div class="weapon-column big-column">
                     <div class="weapon-header-cell big-cell long-cell">ZBROJA</div>
-                    <input class="stat-input big-input">
+                    <input id="armor-name" class="stat-input big-input">
                 </div>
                 <div class="weapon-column long-column">
                     <div class="weapon-header-cell">RODZAJ</div>
-                    <input class="stat-input long-input">
+                    <input id="armor-kind" class="stat-input long-input">
                 </div>
                 <div class="weapon-column  short-column">
                     <div class="weapon-header-cell">PREMIA ZE ZBROI</div>
-                    <input class="stat-input short-input">
+                    <input id="armor-bonus" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">MAX BONUS ZE ZR</div>
-                    <input class="stat-input short-input">
+                    <input id="armor-max-agility-bonus" class="stat-input short-input">
                 </div>
             </div>
             <div class="weapon-row">
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">KARA DO TESTU</div>
-                    <input class="stat-input short-input">
+                    <input id="armor-test-penalty" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">NIEPOW. CZARU</div>
-                    <input class="stat-input short-input">
+                    <input id="armor-spell-failure" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">SZYBKOŚĆ</div>
-                    <input class="stat-input short-input">
+                    <input id="armor-speed" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WAGA</div>
-                    <input class="stat-input short-input">
+                    <input id="armor-weight" class="stat-input short-input">
                 </div>
                 <div class="weapon-column very-long-column">
                     <div class="weapon-header-cell">SPECJALNE CECHY</div>
-                    <input class="stat-input very-long-input">
+                    <input id="armor-special" class="stat-input very-long-input">
                 </div>
             </div>
         </div>
@@ -661,41 +662,41 @@
             <div class="weapon-row">
                 <div class="weapon-column big-column">
                     <div class="weapon-header-cell big-cell long-cell">TARCZA</div>
-                    <input class="stat-input big-input">
+                    <input id="shield-name" class="stat-input big-input">
                 </div>
                 <div class="weapon-column long-column">
                     <div class="weapon-header-cell">RODZAJ</div>
-                    <input class="stat-input long-input">
+                    <input id="shield-kind" class="stat-input long-input">
                 </div>
                 <div class="weapon-column  short-column">
                     <div class="weapon-header-cell">BONUS OCHRONY</div>
-                    <input class="stat-input short-input">
+                    <input id="shield-protection-bonus" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">MAX BONUS ZE ZR</div>
-                    <input class="stat-input short-input">
+                    <input id="shield-max-agility-bonus" class="stat-input short-input">
                 </div>
             </div>
             <div class="weapon-row">
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">KARA DO TESTU</div>
-                    <input class="stat-input short-input">
+                    <input id="shield-test-penalty" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">NIEPOW. CZARU</div>
-                    <input class="stat-input short-input">
+                    <input id="shield-spell-failure" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">SZYBKOŚĆ</div>
-                    <input class="stat-input short-input">
+                    <input id="shield-speed" class="stat-input short-input">
                 </div>
                 <div class="weapon-column short-column">
                     <div class="weapon-header-cell">WAGA</div>
-                    <input class="stat-input short-input">
+                    <input id="shield-weight" class="stat-input short-input">
                 </div>
                 <div class="weapon-column very-long-column">
                     <div class="weapon-header-cell">SPECJALNE CECHY</div>
-                    <input class="stat-input very-long-input">
+                    <input id="shield-special" class="stat-input very-long-input">
                 </div>
             </div>
         </div>
@@ -703,7 +704,7 @@
             <div class="standard-ammo-column">
                 <div class="column-title">AMUNICJA ZWYKŁA</div>
                 <div class="ammo-set-wrapper">
-                    <input class="stat-input" type="number">
+                    <input id="ammo1" class="stat-input" type="number">
                     <div class="ammo-set">
                         <div class="ammo-column">
                             <div class="ammo-box"></div>
@@ -750,7 +751,7 @@
                     </div>
                 </div>
                 <div class="ammo-set-wrapper">
-                    <input class="stat-input" type="number">
+                    <input id="ammo2" class="stat-input" type="number">
                     <div class="ammo-set">
                         <div class="ammo-column">
                             <div class="ammo-box"></div>
@@ -800,7 +801,7 @@
             <div class="magic-ammo-column">
                 <div class="column-title">AMUNICJA MAGICZNA</div>
                 <div class="ammo-set-wrapper">
-                    <input class="stat-input" type="number">
+                    <input id="magic-ammo1" class="stat-input" type="number">
                     <div class="ammo-set">
                         <div class="ammo-column">
                             <div class="ammo-box"></div>
@@ -847,7 +848,7 @@
                     </div>
                 </div>
                 <div class="ammo-set-wrapper">
-                    <input class="stat-input" type="number">
+                    <input id="magic-ammo2" lass="stat-input" type="number">
                     <div class="ammo-set">
                         <div class="ammo-column">
                             <div class="ammo-box"></div>

@@ -94,7 +94,27 @@ let character = {
         inteligence: {},
         wisdom: {},
         charisma: {},
-    }
+    },
+    hp: {},
+    armorClass: {},
+    attacks: {
+        melee: {},
+        distance: {}
+    },
+    initiative: {},
+    magic: {},
+    defensiveThrows: {
+        will: {},
+        endurance: {},
+        reflex: {}
+    },
+    weapons: {
+        weapon1: {},
+        weapon2: {},
+        weapon3: {},
+    },
+    armor: {},
+    shield: {}
 };
 if (sessionStorage.character) {
     character =  mergeDeep(character, JSON.parse(sessionStorage.character));
@@ -204,6 +224,65 @@ function initInputs() {
     registerCharacterInput("inteligence-tmp-modifier", (value) => character.baseStats.inteligence.tmpModifier = value, (character) => character.baseStats.inteligence.tmpModifier);
     registerCharacterInput("wisdom-tmp-modifier", (value) => character.baseStats.wisdom.tmpModifier = value, (character) => character.baseStats.wisdom.tmpModifier);
     registerCharacterInput("charisma-tmp-modifier", (value) => character.baseStats.charisma.tmpModifier = value, (character) => character.baseStats.charisma.tmpModifier);
+    registerCharacterInput("hp-total", (value) => character.hp.total = value, (character) => character.hp.total);
+    registerCharacterInput("armor-class-total", (value) => character.armorClass.total = value, (character) => character.armorClass.total);
+    registerCharacterInput("touch-attack-total", (value) => character.attacks.touchTotal = value, (character) => character.attacks.touchTotal);
+    registerCharacterInput("suprise-attack-total", (value) => character.attacks.supriseTotal = value, (character) => character.attacks.supriseTotal);
+    registerCharacterInput("hp-current", (value) => character.hp.current = value, (character) => character.hp.current);
+    registerCharacterInput("armor-class-armor-bonus", (value) => character.armorClass.armorBonus = value, (character) => character.armorClass.armorBonus);
+    registerCharacterInput("armor-class-shield-bonus", (value) => character.armorClass.shieldBonus = value, (character) => character.armorClass.shieldBonus);
+    registerCharacterInput("armor-class-agility-modifier", (value) => character.armorClass.agilityModifier = value, (character) => character.armorClass.agilityModifier);
+    registerCharacterInput("base-attack-bonus", (value) => character.attacks.baseBonus = value, (character) => character.attacks.baseBonus);
+    registerCharacterInput("initiative-total", (value) => character.initiative.total = value, (character) => character.initiative.total);
+    registerCharacterInput("initiative-agility-modifier", (value) => character.initiative.agilityModifier = value, (character) => character.initiative.agilityModifier);
+    registerCharacterInput("initiative-other", (value) => character.initiative.other = value, (character) => character.initiative.other);
+    registerCharacterInput("bruises", (value) => character.hp.bruises = value, (character) => character.hp.bruises);
+    registerCharacterInput("armor-class-size-modifier", (value) => character.armorClass.sizeModifier = value, (character) => character.armorClass.sizeModifier);
+    registerCharacterInput("armor-class-natural-armor", (value) => character.armorClass.naturalArmor = value, (character) => character.armorClass.naturalArmor);
+    registerCharacterInput("armor-class-other", (value) => character.armorClass.other = value, (character) => character.armorClass.other);
+    registerCharacterInput("speed", (value) => character.speed = value, (character) => character.speed);
+    registerCharacterInput("damage-reduction", (value) => character.armorClass.damageReduction = value, (character) => character.armorClass.damageReduction);
+    registerCharacterInput("miss-chance", (value) => character.armorClass.missChance = value, (character) => character.armorClass.missChance);
+    registerCharacterInput("armor-penalty", (value) => character.armorClass.armorPenalty = value, (character) => character.armorClass.armorPenalty);
+    registerCharacterInput("life-dices", (value) => character.hp.lifeDices = value, (character) => character.hp.lifeDices);
+    registerCharacterInput("spells-limitation", (value) => character.magic.spellsLimitation = value, (character) => character.magic.spellsLimitation);
+    registerCharacterInput("magic-resistance", (value) => character.magic.resistance = value, (character) => character.magic.resistance);
+    registerCharacterInput("defensive-endurance-total", (value) => character.defensiveThrows.endurance.total = value, (character) => character.defensiveThrows.endurance.total);
+    registerCharacterInput("defensive-endurance-base-defense", (value) => character.defensiveThrows.endurance.baseDefense = value, (character) => character.defensiveThrows.endurance.baseDefense);
+    registerCharacterInput("defensive-endurance-magic-modifier", (value) => character.defensiveThrows.endurance.magicModifier = value, (character) => character.defensiveThrows.endurance.magicModifier);
+    registerCharacterInput("defensive-endurance-trait-modifier", (value) => character.defensiveThrows.endurance.traitModifier = value, (character) => character.defensiveThrows.endurance.traitModifier);
+    registerCharacterInput("defensive-endurance-other", (value) => character.defensiveThrows.endurance.other = value, (character) => character.defensiveThrows.endurance.other);
+    registerCharacterInput("defensive-endurance-tmp-modifier", (value) => character.defensiveThrows.endurance.tmpModifier = value, (character) => character.defensiveThrows.endurance.tmpModifier);
+    registerCharacterInput("defensive-reflex-total", (value) => character.defensiveThrows.reflex.total = value, (character) => character.defensiveThrows.reflex.total);
+    registerCharacterInput("defensive-reflex-base-defense", (value) => character.defensiveThrows.reflex.baseDefense = value, (character) => character.defensiveThrows.reflex.baseDefense);
+    registerCharacterInput("defensive-reflex-magic-modifier", (value) => character.defensiveThrows.reflex.magicModifier = value, (character) => character.defensiveThrows.reflex.magicModifier);
+    registerCharacterInput("defensive-reflex-trait-modifier", (value) => character.defensiveThrows.reflex.traitModifier = value, (character) => character.defensiveThrows.reflex.traitModifier);
+    registerCharacterInput("defensive-reflex-other", (value) => character.defensiveThrows.reflex.other = value, (character) => character.defensiveThrows.reflex.other);
+    registerCharacterInput("defensive-reflex-tmp-modifier", (value) => character.defensiveThrows.reflex.tmpModifier = value, (character) => character.defensiveThrows.reflex.tmpModifier);
+    registerCharacterInput("defensive-will-total", (value) => character.defensiveThrows.will.total = value, (character) => character.defensiveThrows.will.total);
+    registerCharacterInput("defensive-will-base-defense", (value) => character.defensiveThrows.will.baseDefense = value, (character) => character.defensiveThrows.will.baseDefense);
+    registerCharacterInput("defensive-will-magic-modifier", (value) => character.defensiveThrows.will.magicModifier = value, (character) => character.defensiveThrows.will.magicModifier);
+    registerCharacterInput("defensive-will-trait-modifier", (value) => character.defensiveThrows.will.traitModifier = value, (character) => character.defensiveThrows.will.traitModifier);
+    registerCharacterInput("defensive-will-other", (value) => character.defensiveThrows.will.other = value, (character) => character.defensiveThrows.will.other);
+    registerCharacterInput("defensive-will-tmp-modifier", (value) => character.defensiveThrows.will.tmpModifier = value, (character) => character.defensiveThrows.will.tmpModifier);
+    registerCharacterInput("defensive-special-modifier", (value) => character.defensiveThrows.specialModifier = value, (character) => character.defensiveThrows.specialModifier);
+    registerCharacterInput("melee-attack-total", (value) => character.attacks.melee.total = value, (character) => character.attacks.melee.total);
+    registerCharacterInput("melee-attack-base-bonus", (value) => character.attacks.melee.baseBonus = value, (character) => character.attacks.melee.baseBonus);
+    registerCharacterInput("melee-attack-strength-modifier", (value) => character.attacks.melee.strengthModifier = value, (character) => character.attacks.melee.strengthModifier);
+    registerCharacterInput("melee-attack-size-modifier", (value) => character.attacks.melee.sizeModifier = value, (character) => character.attacks.melee.sizeModifier);
+    registerCharacterInput("melee-attack-other", (value) => character.attacks.melee.other = value, (character) => character.attacks.melee.other);
+    registerCharacterInput("melee-attack-tmp-modifier", (value) => character.attacks.melee.tmpModifier = value, (character) => character.attacks.melee.tmpModifier);
+    registerCharacterInput("distance-attack-total", (value) => character.attacks.distance.total = value, (character) => character.attacks.distance.total);
+    registerCharacterInput("distance-attack-base-bonus", (value) => character.attacks.distance.baseBonus = value, (character) => character.attacks.distance.baseBonus);
+    registerCharacterInput("distance-attack-agility-modifier", (value) => character.attacks.distance.agilityModifier = value, (character) => character.attacks.distance.agilityModifier);
+    registerCharacterInput("distance-attack-size-modifier", (value) => character.attacks.distance.sizeModifier = value, (character) => character.attacks.distance.sizeModifier);
+    registerCharacterInput("distance-attack-other", (value) => character.attacks.distance.other = value, (character) => character.attacks.distance.other);
+    registerCharacterInput("distance-attack-tmp-modifier", (value) => character.attacks.distance.tmpModifier = value, (character) => character.attacks.distance.tmpModifier);
+}
+
+function registerWeapon(number) {
+    registerCharacterInput("distance-attack-tmp-modifier", (value) => character.attacks.distance.tmpModifier = value, (character) => character.attacks.distance.tmpModifier);
+
 }
 
 document.getElementById("import-button").addEventListener("click", () => importFile());
