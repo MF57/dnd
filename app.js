@@ -2,6 +2,7 @@ import {MDCTextField} from '@material/textfield';
 import {MDCNotchedOutline} from '@material/notched-outline';
 import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
+import {MDCRipple} from '@material/ripple';
 
 const textFieldIds = [
     "#character-name-textfield",
@@ -39,6 +40,9 @@ const notches = [
     "#skin-outline",
 ];
 
+new MDCRipple(document.querySelector('.import-button'));
+new MDCRipple(document.querySelector('.export-button'));
+
 textFieldIds.forEach(textField => new MDCTextField(document.querySelector(textField)));
 notches.forEach(notch => new MDCNotchedOutline(document.querySelector(notch)));
 
@@ -74,20 +78,61 @@ function registerCharacterInput(id, characterUpdater, characterValueGetter) {
     })
 }
 
-registerCharacterInput("character-name", (value) => character.characterName = value, (character) => character.characterName);
-registerCharacterInput("player-name", (value) => character.playerName = value, (character) => character.playerName);
-registerCharacterInput("class", (value) => character.class = value, (character) => character.class);
-registerCharacterInput("level", (value) => character.level = value, (character) => character.level);
-registerCharacterInput("race", (value) => character.race = value, (character) => character.race);
-registerCharacterInput("size", (value) => character.size = value, (character) => character.size);
-registerCharacterInput("character", (value) => character.character = value, (character) => character.character);
-registerCharacterInput("sex", (value) => character.sex = value, (character) => character.sex);
-registerCharacterInput("age", (value) => character.age = value, (character) => character.age);
-registerCharacterInput("height", (value) => character.height = value, (character) => character.height);
-registerCharacterInput("weight", (value) => character.weight = value, (character) => character.weight);
-registerCharacterInput("eye", (value) => character.eye = value, (character) => character.eye);
-registerCharacterInput("hair", (value) => character.hair = value, (character) => character.hair);
-registerCharacterInput("skin", (value) => character.skin = value, (character) => character.skin);
-registerCharacterInput("religion", (value) => character.religion = value, (character) => character.religion);
+function importFile() {
+    var files = document.getElementById('selectFiles').files;
+    if (files.length <= 0) {
+        return false;
+    }
 
+    var fr = new FileReader();
 
+    fr.onload = function(e) {
+        character = JSON.parse(e.target.result);
+        sessionStorage.character = JSON.stringify(character);
+        initInputs()
+    };
+
+    fr.readAsText(files.item(0));
+
+}
+
+function exportFile(filename) {
+    const file = new Blob([JSON.stringify(character)], {type: "application/json"});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        const a = document.createElement("a"),
+            url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
+}
+
+function initInputs() {
+    registerCharacterInput("character-name", (value) => character.characterName = value, (character) => character.characterName);
+    registerCharacterInput("player-name", (value) => character.playerName = value, (character) => character.playerName);
+    registerCharacterInput("class", (value) => character.class = value, (character) => character.class);
+    registerCharacterInput("level", (value) => character.level = value, (character) => character.level);
+    registerCharacterInput("race", (value) => character.race = value, (character) => character.race);
+    registerCharacterInput("size", (value) => character.size = value, (character) => character.size);
+    registerCharacterInput("character", (value) => character.character = value, (character) => character.character);
+    registerCharacterInput("sex", (value) => character.sex = value, (character) => character.sex);
+    registerCharacterInput("age", (value) => character.age = value, (character) => character.age);
+    registerCharacterInput("height", (value) => character.height = value, (character) => character.height);
+    registerCharacterInput("weight", (value) => character.weight = value, (character) => character.weight);
+    registerCharacterInput("eye", (value) => character.eye = value, (character) => character.eye);
+    registerCharacterInput("hair", (value) => character.hair = value, (character) => character.hair);
+    registerCharacterInput("skin", (value) => character.skin = value, (character) => character.skin);
+    registerCharacterInput("religion", (value) => character.religion = value, (character) => character.religion);
+}
+
+document.getElementById("import-button").addEventListener("click", () => importFile());
+document.getElementById("export-button").addEventListener("click", () => exportFile("character.json"));
+
+initInputs();
