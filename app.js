@@ -324,6 +324,11 @@ function initInputs() {
     registerCharacterInput("shield-speed", (value) => character.shield.speed = value, (character) => character.shield.speed);
     registerCharacterInput("shield-weight", (value) => character.shield.weight = value, (character) => character.shield.weight);
     registerCharacterInput("shield-special", (value) => character.shield.special = value, (character) => character.shield.special);
+    registerCharacterInput("ammo1", (value) => character.ammo.ammo1 = value, (character) => character.ammo.ammo1);
+    registerCharacterInput("ammo2", (value) => character.ammo.ammo2 = value, (character) => character.ammo.ammo2);
+    registerCharacterInput("magic-ammo1", (value) => character.ammo.magicAmmo1 = value, (character) => character.ammo.magicAmmo1);
+    registerCharacterInput("magic-ammo2", (value) => character.ammo.magicAmmo2 = value, (character) => character.ammo.magicAmmo2);
+
 }
 
 
