@@ -114,7 +114,8 @@ let character = {
         weapon3: {},
     },
     armor: {},
-    shield: {}
+    shield: {},
+    ammo: {}
 };
 if (sessionStorage.character) {
     character =  mergeDeep(character, JSON.parse(sessionStorage.character));
@@ -278,12 +279,54 @@ function initInputs() {
     registerCharacterInput("distance-attack-size-modifier", (value) => character.attacks.distance.sizeModifier = value, (character) => character.attacks.distance.sizeModifier);
     registerCharacterInput("distance-attack-other", (value) => character.attacks.distance.other = value, (character) => character.attacks.distance.other);
     registerCharacterInput("distance-attack-tmp-modifier", (value) => character.attacks.distance.tmpModifier = value, (character) => character.attacks.distance.tmpModifier);
+    registerCharacterInput("weapon1-name", (value) => character.weapons.weapon1.name = value, (character) => character.weapons.weapon1.name);
+    registerCharacterInput("weapon1-total-attack-bonus", (value) => character.weapons.weapon1.attackBonus = value, (character) => character.weapons.weapon1.attackBonus);
+    registerCharacterInput("weapon1-damage", (value) => character.weapons.weapon1.damage = value, (character) => character.weapons.weapon1.damage);
+    registerCharacterInput("weapon1-crit", (value) => character.weapons.weapon1.crit = value, (character) => character.weapons.weapon1.crit);
+    registerCharacterInput("weapon1-range", (value) => character.weapons.weapon1.range = value, (character) => character.weapons.weapon1.range);
+    registerCharacterInput("weapon1-weight", (value) => character.weapons.weapon1.weight = value, (character) => character.weapons.weapon1.weight);
+    registerCharacterInput("weapon1-kind", (value) => character.weapons.weapon1.kind = value, (character) => character.weapons.weapon1.kind);
+    registerCharacterInput("weapon1-size", (value) => character.weapons.weapon1.size = value, (character) => character.weapons.weapon1.size);
+    registerCharacterInput("weapon1-special", (value) => character.weapons.weapon1.special = value, (character) => character.weapons.weapon1.special);
+    registerCharacterInput("weapon2-name", (value) => character.weapons.weapon2.name = value, (character) => character.weapons.weapon2.name);
+    registerCharacterInput("weapon2-total-attack-bonus", (value) => character.weapons.weapon2.attackBonus = value, (character) => character.weapons.weapon2.attackBonus);
+    registerCharacterInput("weapon2-damage", (value) => character.weapons.weapon2.damage = value, (character) => character.weapons.weapon2.damage);
+    registerCharacterInput("weapon2-crit", (value) => character.weapons.weapon2.crit = value, (character) => character.weapons.weapon2.crit);
+    registerCharacterInput("weapon2-range", (value) => character.weapons.weapon2.range = value, (character) => character.weapons.weapon2.range);
+    registerCharacterInput("weapon2-weight", (value) => character.weapons.weapon2.weight = value, (character) => character.weapons.weapon2.weight);
+    registerCharacterInput("weapon2-kind", (value) => character.weapons.weapon2.kind = value, (character) => character.weapons.weapon2.kind);
+    registerCharacterInput("weapon2-size", (value) => character.weapons.weapon2.size = value, (character) => character.weapons.weapon2.size);
+    registerCharacterInput("weapon2-special", (value) => character.weapons.weapon2.special = value, (character) => character.weapons.weapon2.special);
+    registerCharacterInput("weapon3-name", (value) => character.weapons.weapon3.name = value, (character) => character.weapons.weapon3.name);
+    registerCharacterInput("weapon3-total-attack-bonus", (value) => character.weapons.weapon3.attackBonus = value, (character) => character.weapons.weapon3.attackBonus);
+    registerCharacterInput("weapon3-damage", (value) => character.weapons.weapon3.damage = value, (character) => character.weapons.weapon3.damage);
+    registerCharacterInput("weapon3-crit", (value) => character.weapons.weapon3.crit = value, (character) => character.weapons.weapon3.crit);
+    registerCharacterInput("weapon3-range", (value) => character.weapons.weapon3.range = value, (character) => character.weapons.weapon3.range);
+    registerCharacterInput("weapon3-weight", (value) => character.weapons.weapon3.weight = value, (character) => character.weapons.weapon3.weight);
+    registerCharacterInput("weapon3-kind", (value) => character.weapons.weapon3.kind = value, (character) => character.weapons.weapon3.kind);
+    registerCharacterInput("weapon3-size", (value) => character.weapons.weapon3.size = value, (character) => character.weapons.weapon3.size);
+    registerCharacterInput("weapon3-special", (value) => character.weapons.weapon3.special = value, (character) => character.weapons.weapon3.special);
+    registerCharacterInput("armor-name", (value) => character.armor.name = value, (character) => character.armor.name);
+    registerCharacterInput("armor-kind", (value) => character.armor.kind = value, (character) => character.armor.kind);
+    registerCharacterInput("armor-bonus", (value) => character.armor.bonus = value, (character) => character.armor.bonus);
+    registerCharacterInput("armor-max-agility-bonus", (value) => character.armor.agilityBonus = value, (character) => character.armor.agilityBonus);
+    registerCharacterInput("armor-test-penalty", (value) => character.armor.testPenalty = value, (character) => character.armor.testPenalty);
+    registerCharacterInput("armor-spell-failure", (value) => character.armor.spellFailure = value, (character) => character.armor.spellFailure);
+    registerCharacterInput("armor-speed", (value) => character.armor.speed = value, (character) => character.armor.speed);
+    registerCharacterInput("armor-weight", (value) => character.armor.weight = value, (character) => character.armor.weight);
+    registerCharacterInput("armor-special", (value) => character.armor.special = value, (character) => character.armor.special);
+    registerCharacterInput("shield-name", (value) => character.shield.name = value, (character) => character.shield.name);
+    registerCharacterInput("shield-kind", (value) => character.shield.kind = value, (character) => character.shield.kind);
+    registerCharacterInput("shield-protection-bonus", (value) => character.shield.protectionBonus = value, (character) => character.shield.protectionBonus);
+    registerCharacterInput("shield-max-agility-bonus", (value) => character.shield.agilityBonus = value, (character) => character.shield.agilityBonus);
+    registerCharacterInput("shield-test-penalty", (value) => character.shield.testPenalty = value, (character) => character.shield.testPenalty);
+    registerCharacterInput("shield-spell-failure", (value) => character.shield.spellFailure = value, (character) => character.shield.spellFailure);
+    registerCharacterInput("shield-speed", (value) => character.shield.speed = value, (character) => character.shield.speed);
+    registerCharacterInput("shield-weight", (value) => character.shield.weight = value, (character) => character.shield.weight);
+    registerCharacterInput("shield-special", (value) => character.shield.special = value, (character) => character.shield.special);
 }
 
-function registerWeapon(number) {
-    registerCharacterInput("distance-attack-tmp-modifier", (value) => character.attacks.distance.tmpModifier = value, (character) => character.attacks.distance.tmpModifier);
 
-}
 
 document.getElementById("import-button").addEventListener("click", () => importFile());
 document.getElementById("export-button").addEventListener("click", () => exportFile("character.json"));
