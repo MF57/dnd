@@ -171,7 +171,10 @@ let character = {
         customAbility11: {},
         customAbility12: {},
         customAbility13: {},
-    }
+    },
+    equipment: {},
+    languages: {},
+    trumps: {},
 };
 if (sessionStorage.character) {
     character = mergeDeep(character, JSON.parse(sessionStorage.character));
@@ -479,6 +482,24 @@ function initInputs() {
     registerAbility("animal-empathy", (character) => character.abilities.animalEmpathy);
     for (let i = 1; i < 14; i++) {
         registerCustomAbility(i, (character) => character.abilities["customAbility" + i.toString()])
+    }
+    for (let i = 1; i < 31; i++) {
+        registerCharacterInput("equipment-"+i.toString(), (value) => character.equipment["equipment-"+i.toString()] = value, (character) => character.equipment["equipment-"+i.toString()]);
+    }
+    for (let i = 1; i < 16; i++) {
+        registerCharacterInput("magic-equipment-"+i.toString(), (value) => character.equipment["magic-equipment-"+i.toString()] = value, (character) => character.equipment["magic-equipment-"+i.toString()]);
+    }
+    for (let i = 1; i < 9; i++) {
+        registerCharacterInput("race-trump-"+i.toString(), (value) => character.trumps["race-trump-"+i.toString()] = value, (character) => character.trumps["race-trump-"+i.toString()]);
+    }
+    for (let i = 1; i < 9; i++) {
+        registerCharacterInput("learned-trump-"+i.toString(), (value) => character.trumps["learned-trump-"+i.toString()] = value, (character) => character.trumps["learned-trump-"+i.toString()]);
+    }
+    for (let i = 1; i < 18; i++) {
+        registerCharacterInput("class-trump-"+i.toString(), (value) => character.trumps["class-trump-"+i.toString()] = value, (character) => character.trumps["class-trump-"+i.toString()]);
+    }
+    for (let i = 1; i < 7; i++) {
+        registerCharacterInput("language-"+i.toString(), (value) => character.languages["language-"+i.toString()] = value, (character) => character.languages["language-"+i.toString()]);
     }
 
 }
