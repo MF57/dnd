@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html>
 <head>
     <title>Material Starter Kit</title>
@@ -847,7 +848,7 @@
                     </div>
                 </div>
                 <div class="ammo-set-wrapper">
-                    <input id="magic-ammo2"class="stat-input">
+                    <input id="magic-ammo2" class="stat-input">
                     <div class="ammo-set">
                         <div class="ammo-column">
                             <div class="ammo-box"></div>
@@ -896,9 +897,9 @@
             </div>
         </div>
         <div class="experience-section">
-            <input class="stat-input">
+            <input class="stat-input" id="campaign">
             <div class="experience-desc">KAMPANIA</div>
-            <input class="stat-input exp-input" type="number">
+            <input class="stat-input exp-input" type="number" id="experience">
             <div class="experience-desc">PUNKTY DOŚWIADCZENIA</div>
         </div>
         <div class="money-section">
@@ -909,50 +910,50 @@
                 <div class="standard-money-column">
                     <div class="money-row">
                         <div class="money-desc">Platyna:</div>
-                        <input class="stat-input" type="number">
+                        <input class="stat-input" type="number" id="platinum">
                     </div>
                     <div class="money-row">
                         <div class="money-desc">Złoto:</div>
-                        <input class="stat-input" type="number">
+                        <input class="stat-input" type="number" id="gold">
                     </div>
                     <div class="money-row">
                         <div class="money-desc">Srebro:</div>
-                        <input class="stat-input" type="number">
+                        <input class="stat-input" type="number" id="silver">
                     </div>
                     <div class="money-row">
                         <div class="money-desc">Miedziaki:</div>
-                        <input class="stat-input" type="number">
+                        <input class="stat-input" type="number" id="coppers">
                     </div>
                     <div class="money-row">
-                        <input class="stat-input">
+                        <input class="stat-input" id="jewelry-1">
                     </div>
                     <div class="money-row">
-                        <input class="stat-input">
+                        <input class="stat-input" id="jewelry-2">
                     </div>
                     <div class="money-row">
-                        <input class="stat-input">
+                        <input class="stat-input" id="jewelry-3">
                     </div>
                     <div class="money-row">
-                        <input class="stat-input">
+                        <input class="stat-input" id="jewelry-4">
                     </div>
                     <div class="money-row">
-                        <input class="stat-input">
+                        <input class="stat-input" id="jewelry-5">
                     </div>
                     <div class="money-row">
-                        <input class="stat-input">
+                        <input class="stat-input" id="jewelry-6">
                     </div>
                 </div>
                 <div class="other-money-column">
                     <div class="other-money-desc">Inne kosztowności i majątek</div>
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
-                    <input class="stat-input">
+                    <input class="stat-input" id="other-jewelry-1">
+                    <input class="stat-input" id="other-jewelry-2">
+                    <input class="stat-input" id="other-jewelry-3">
+                    <input class="stat-input" id="other-jewelry-4">
+                    <input class="stat-input" id="other-jewelry-5">
+                    <input class="stat-input" id="other-jewelry-6">
+                    <input class="stat-input" id="other-jewelry-7">
+                    <input class="stat-input" id="other-jewelry-8">
+                    <input class="stat-input" id="other-jewelry-9">
                 </div>
             </div>
         </div>
@@ -1116,7 +1117,7 @@
                     <div class="first-cell abilities-cell">
                         <div id="pickpocketing-textfield" class="mdc-form-field">
                             <div id="pickpocketing" class="mdc-checkbox">
-                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                <input type="checkbox" class="mdc-checkbox__native-control"/>
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                         <path class="mdc-checkbox__checkmark-path" fill="none"
@@ -1254,8 +1255,8 @@
                         <input id="profession-custom" class="stat-input">
                     </div>
                     <div class="first-cell abilities-cell">
-                        <div  id="clothes-changing-textfield" class="mdc-form-field">
-                            <div  id="clothes-changing" class="mdc-checkbox">
+                        <div id="clothes-changing-textfield" class="mdc-form-field">
+                            <div id="clothes-changing" class="mdc-checkbox">
                                 <input type="checkbox" class="mdc-checkbox__native-control"/>
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
@@ -1366,8 +1367,8 @@
                         <div class="exclusive-ability-circle"></div>
                     </div>
                     <div class="first-cell abilities-cell">
-                        <div  id="approximating-textfield" class="mdc-form-field">
-                            <div  id="approximating" class="mdc-checkbox">
+                        <div id="approximating-textfield" class="mdc-form-field">
+                            <div id="approximating" class="mdc-checkbox">
                                 <input type="checkbox" class="mdc-checkbox__native-control"/>
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">

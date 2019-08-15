@@ -115,6 +115,7 @@ let character = {
     armor: {},
     shield: {},
     ammo: {},
+    money: {},
     abilities: {
         alchemy: {},
         bluff: {},
@@ -423,6 +424,18 @@ function initInputs() {
     registerCharacterInput("ammo2", (value) => character.ammo.ammo2 = value, (character) => character.ammo.ammo2);
     registerCharacterInput("magic-ammo1", (value) => character.ammo.magicAmmo1 = value, (character) => character.ammo.magicAmmo1);
     registerCharacterInput("magic-ammo2", (value) => character.ammo.magicAmmo2 = value, (character) => character.ammo.magicAmmo2);
+    registerCharacterInput("campaign", (value) => character.campaign = value, (character) => character.campaign);
+    registerCharacterInput("experience", (value) => character.experience = value, (character) => character.experience);
+    registerCharacterInput("platinum", (value) => character.money.platinum = value, (character) => character.money.platinum);
+    registerCharacterInput("gold", (value) => character.money.gold = value, (character) => character.money.gold);
+    registerCharacterInput("silver", (value) => character.money.silver = value, (character) => character.money.silver);
+    registerCharacterInput("coppers", (value) => character.money.coppers = value, (character) => character.money.coppers);
+    for (let i = 1; i < 7; i++) {
+        registerCharacterInput("jewelry-"+i.toString(), (value) => character.money["jewelry-"+i.toString()] = value, (character) => character.money["jewelry-"+i.toString()]);
+    }
+    for (let i = 1; i < 10; i++) {
+        registerCharacterInput("other-jewelry-"+i.toString(), (value) => character.money["other-jewelry-"+i.toString()] = value, (character) => character.money["other-jewelry-"+i.toString()]);
+    }
     registerAbility("alchemy", (character) => character.abilities.alchemy);
     registerAbility("bluff", (character) => character.abilities.bluff);
     registerAbility("quiet-moving", (character) => character.abilities.quietMoving);
