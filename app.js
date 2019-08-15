@@ -439,6 +439,8 @@ function initInputs() {
     for (let i = 1; i < 10; i++) {
         registerCharacterInput("other-jewelry-"+i.toString(), (value) => character.money["other-jewelry-"+i.toString()] = value, (character) => character.money["other-jewelry-"+i.toString()]);
     }
+    registerCharacterInput("max-range", (value) => character.abilities.maxRange = value, (character) => character.abilities.maxRange);
+    registerCharacterInput("spare-points", (value) => character.abilities.sparePoints = value, (character) => character.abilities.sparePoints);
     registerAbility("alchemy", (character) => character.abilities.alchemy);
     registerAbility("bluff", (character) => character.abilities.bluff);
     registerAbility("quiet-moving", (character) => character.abilities.quietMoving);
