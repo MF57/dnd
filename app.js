@@ -5,7 +5,6 @@ import {MDCCheckbox} from '@material/checkbox';
 import {MDCRipple} from '@material/ripple';
 
 
-
 /**
  * Simple object check.
  * @param item
@@ -27,10 +26,10 @@ function mergeDeep(target, ...sources) {
     if (isObject(target) && isObject(source)) {
         for (const key in source) {
             if (isObject(source[key])) {
-                if (!target[key]) Object.assign(target, { [key]: {} });
+                if (!target[key]) Object.assign(target, {[key]: {}});
                 mergeDeep(target[key], source[key]);
             } else {
-                Object.assign(target, { [key]: source[key] });
+                Object.assign(target, {[key]: source[key]});
             }
         }
     }
@@ -115,10 +114,66 @@ let character = {
     },
     armor: {},
     shield: {},
-    ammo: {}
+    ammo: {},
+    abilities: {
+        alchemy: {},
+        bluff: {},
+        quietMoving: {},
+        magicTheory: {},
+        lypReading: {},
+        diplomacy: {},
+        forgery: {},
+        riding: {},
+        focus: {},
+        pickpocketing: {},
+        healing: {},
+        listening: {},
+        decyphering: {},
+        lockpicking: {},
+        swimming: {},
+        animalTreating: {},
+        disinformation: {},
+        profession: {},
+        clothesChanging: {},
+        searching: {},
+        balancing: {},
+        craft: {},
+        jumping: {},
+        lineHandling: {},
+        magicItemsHandling: {},
+        approximating: {},
+        wildSecrets: {},
+        hiding: {},
+        disabling: {},
+        falling: {},
+        knowledge: {},
+        fortunetelling: {},
+        climbing: {},
+        directionIntuition: {},
+        intentionIntuition: {},
+        performances: {},
+        escaping: {},
+        threatening: {},
+        noticing: {},
+        informationGathering: {},
+        animalEmpathy: {},
+        customAbility1: {},
+        customAbility2: {},
+        customAbility3: {},
+        customAbility4: {},
+        customAbility5: {},
+        customAbility6: {},
+        customAbility7: {},
+        customAbility8: {},
+        customAbility9: {},
+        customAbility10: {},
+        customAbility11: {},
+        customAbility12: {},
+        customAbility13: {},
+    }
 };
 if (sessionStorage.character) {
-    character =  mergeDeep(character, JSON.parse(sessionStorage.character));
+    character = mergeDeep(character, JSON.parse(sessionStorage.character));
 }
 
 
@@ -128,7 +183,7 @@ function registerCharacterInput(id, characterUpdater, characterValueGetter) {
     let newValue = "";
     try {
         newValue = characterValueGetter(character);
-    } catch(e) {
+    } catch (e) {
         //do nothing
     }
     if (textfield) {
@@ -156,7 +211,7 @@ function importFile() {
 
     var fr = new FileReader();
 
-    fr.onload = function(e) {
+    fr.onload = function (e) {
         character = mergeDeep(character, JSON.parse(e.target.result));
         sessionStorage.character = JSON.stringify(character);
         console.log(character);
@@ -184,6 +239,46 @@ function exportFile(filename) {
         }, 0);
     }
 }
+
+function registerAbility(abilityName, abilityGetter) {
+    const checkbox = new MDCCheckbox(document.getElementById(abilityName));
+    const formField = new MDCFormField(document.getElementById(abilityName + "-textfield"));
+    formField.input = checkbox;
+    let isClassAbility = false;
+    try {
+        isClassAbility = abilityGetter(character).isClassAbility;
+    } catch (e) {
+        //do nothing
+    }
+    if (isClassAbility) {
+        checkbox.checked = true
+    }
+    document.getElementById(abilityName + "-textfield").addEventListener("click", () => {
+        console.log(checkbox.checked);
+        abilityGetter(character).isClassAbility = checkbox.checked;
+        sessionStorage.character = JSON.stringify(character);
+    });
+
+    let additionalInput = document.getElementById(abilityName + "-custom");
+    if (additionalInput) {
+        registerCharacterInput(abilityName + "-custom", (value) => abilityGetter(character).custom = value, (character) => abilityGetter(character).custom);
+    }
+
+    registerCharacterInput(abilityName + "-total-modifier", (value) => abilityGetter(character).totalModifier = value, (character) => abilityGetter(character).totalModifier);
+    registerCharacterInput(abilityName + "-stat-modifier", (value) => abilityGetter(character).statModifier = value, (character) => abilityGetter(character).statModifier);
+    registerCharacterInput(abilityName + "-range", (value) => abilityGetter(character).range = value, (character) => abilityGetter(character).range);
+    registerCharacterInput(abilityName + "-other", (value) => abilityGetter(character).other = value, (character) => abilityGetter(character).other);
+}
+
+function registerCustomAbility(number, abilityGetter) {
+    registerCharacterInput("custom-ability-" + number.toString() + "-name", (value) => abilityGetter(character).name = value, (character) => abilityGetter(character).name);
+    registerCharacterInput("custom-ability-" + number.toString() + "-ability-trait", (value) => abilityGetter(character).abilityTrait = value, (character) => abilityGetter(character).abilityTrait);
+    registerCharacterInput("custom-ability-" + number.toString() + "-total-modifier", (value) => abilityGetter(character).totalModifier = value, (character) => abilityGetter(character).totalModifier);
+    registerCharacterInput("custom-ability-" + number.toString() + "-stat-modifier", (value) => abilityGetter(character).statModifier = value, (character) => abilityGetter(character).statModifier);
+    registerCharacterInput("custom-ability-" + number.toString() + "-range", (value) => abilityGetter(character).range = value, (character) => abilityGetter(character).range);
+    registerCharacterInput("custom-ability-" + number.toString() + "-other", (value) => abilityGetter(character).other = value, (character) => abilityGetter(character).other);
+}
+
 
 function initInputs() {
     registerCharacterInput("character-name", (value) => character.characterName = value, (character) => character.characterName);
@@ -328,9 +423,52 @@ function initInputs() {
     registerCharacterInput("ammo2", (value) => character.ammo.ammo2 = value, (character) => character.ammo.ammo2);
     registerCharacterInput("magic-ammo1", (value) => character.ammo.magicAmmo1 = value, (character) => character.ammo.magicAmmo1);
     registerCharacterInput("magic-ammo2", (value) => character.ammo.magicAmmo2 = value, (character) => character.ammo.magicAmmo2);
+    registerAbility("alchemy", (character) => character.abilities.alchemy);
+    registerAbility("bluff", (character) => character.abilities.bluff);
+    registerAbility("quiet-moving", (character) => character.abilities.quietMoving);
+    registerAbility("magic-theory", (character) => character.abilities.magicTheory);
+    registerAbility("lyp-reading", (character) => character.abilities.lypReading);
+    registerAbility("diplomacy", (character) => character.abilities.diplomacy);
+    registerAbility("forgery", (character) => character.abilities.forgery);
+    registerAbility("riding", (character) => character.abilities.riding);
+    registerAbility("focus", (character) => character.abilities.focus);
+    registerAbility("pickpocketing", (character) => character.abilities.pickpocketing);
+    registerAbility("healing", (character) => character.abilities.healing);
+    registerAbility("listening", (character) => character.abilities.listening);
+    registerAbility("decyphering", (character) => character.abilities.decyphering);
+    registerAbility("lockpicking", (character) => character.abilities.lockpicking);
+    registerAbility("swimming", (character) => character.abilities.swimming);
+    registerAbility("animal-treating", (character) => character.abilities.animalTreating);
+    registerAbility("disinformation", (character) => character.abilities.disinformation);
+    registerAbility("profession", (character) => character.abilities.profession);
+    registerAbility("clothes-changing", (character) => character.abilities.clothesChanging);
+    registerAbility("searching", (character) => character.abilities.searching);
+    registerAbility("balancing", (character) => character.abilities.balancing);
+    registerAbility("craft", (character) => character.abilities.craft);
+    registerAbility("jumping", (character) => character.abilities.jumping);
+    registerAbility("line-handling", (character) => character.abilities.lineHandling);
+    registerAbility("magic-items-handling", (character) => character.abilities.magicItemsHandling);
+    registerAbility("approximating", (character) => character.abilities.approximating);
+    registerAbility("wild-secrets", (character) => character.abilities.wildSecrets);
+    registerAbility("hiding", (character) => character.abilities.hiding);
+    registerAbility("disabling", (character) => character.abilities.disabling);
+    registerAbility("falling", (character) => character.abilities.falling);
+    registerAbility("knowledge", (character) => character.abilities.knowledge);
+    registerAbility("fortunetelling", (character) => character.abilities.fortunetelling);
+    registerAbility("climbing", (character) => character.abilities.climbing);
+    registerAbility("direction-intuition", (character) => character.abilities.directionIntuition);
+    registerAbility("intention-intuition", (character) => character.abilities.intentionIntuition);
+    registerAbility("performances", (character) => character.abilities.performances);
+    registerAbility("escaping", (character) => character.abilities.escaping);
+    registerAbility("threatening", (character) => character.abilities.threatening);
+    registerAbility("noticing", (character) => character.abilities.noticing);
+    registerAbility("information-gathering", (character) => character.abilities.informationGathering);
+    registerAbility("animal-empathy", (character) => character.abilities.animalEmpathy);
+    for (let i = 1; i < 14; i++) {
+        registerCustomAbility(i, (character) => character.abilities["customAbility" + i.toString()])
+    }
 
 }
-
 
 
 document.getElementById("import-button").addEventListener("click", () => importFile());
