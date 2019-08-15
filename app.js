@@ -501,6 +501,26 @@ function initInputs() {
     for (let i = 1; i < 7; i++) {
         registerCharacterInput("language-"+i.toString(), (value) => character.languages["language-"+i.toString()] = value, (character) => character.languages["language-"+i.toString()]);
     }
+    registerCharacterInput("defense-casting-spells-modifier", (value) => character.magic.defenseCastingSpellsModifier = value, (character) => character.magic.defenseCastingSpellsModifier);
+    for (let i = 0; i < 10; i++) {
+        registerCharacterInput("defense-throw-"+i.toString(), (value) => character.magic["defense-throw-"+i.toString()] = value, (character) => character.magic["defense-throw-"+i.toString()]);
+    }
+    for (let i = 0; i < 10; i++) {
+        registerCharacterInput("spells-daily-"+i.toString(), (value) => character.magic["spells-daily-"+i.toString()] = value, (character) => character.magic["spells-daily-"+i.toString()]);
+    }
+    for (let i = 1; i < 10; i++) {
+        registerCharacterInput("premium-spells-"+i.toString(), (value) => character.magic["premium-spells-"+i.toString()] = value, (character) => character.magic["premium-spells-"+i.toString()]);
+    }
+    for (let i = 0; i < 10; i++) {
+        registerCharacterInput("known-spells-number-"+i.toString(), (value) => character.magic["known-spells-number-"+i.toString()] = value, (character) => character.magic["known-spells-number-"+i.toString()]);
+    }
+    for (let i = 1; i < 21; i++) {
+        registerCharacterInput("learned-spell-"+i.toString(), (value) => character.magic["learned-spell-"+i.toString()] = value, (character) => character.magic["learned-spell-"+i.toString()]);
+    }
+    for (let i = 1; i < 21; i++) {
+        registerCharacterInput("remembered-spell-"+i.toString(), (value) => character.magic["remembered-spell-"+i.toString()] = value, (character) => character.magic["remembered-spell-"+i.toString()]);
+    }
+
 
 }
 
