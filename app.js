@@ -176,8 +176,8 @@ let character = {
     languages: {},
     trumps: {},
 };
-if (sessionStorage.character) {
-    character = mergeDeep(character, JSON.parse(sessionStorage.character));
+if (localStorage.character) {
+    character = mergeDeep(character, JSON.parse(localStorage.character));
 }
 
 
@@ -202,7 +202,7 @@ function registerCharacterInput(id, characterUpdater, characterValueGetter) {
     }
     input.addEventListener("blur", () => {
         characterUpdater(input.value);
-        sessionStorage.character = JSON.stringify(character);
+        localStorage.character = JSON.stringify(character);
         console.log(character);
     })
 }
@@ -217,7 +217,7 @@ function importFile() {
 
     fr.onload = function (e) {
         character = mergeDeep(character, JSON.parse(e.target.result));
-        sessionStorage.character = JSON.stringify(character);
+        localStorage.character = JSON.stringify(character);
         console.log(character);
         initInputs()
     };
@@ -260,7 +260,7 @@ function registerAbility(abilityName, abilityGetter) {
     document.getElementById(abilityName + "-textfield").addEventListener("click", () => {
         console.log(checkbox.checked);
         abilityGetter(character).isClassAbility = checkbox.checked;
-        sessionStorage.character = JSON.stringify(character);
+        localStorage.character = JSON.stringify(character);
     });
 
     let additionalInput = document.getElementById(abilityName + "-custom");
