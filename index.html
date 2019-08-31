@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- import the Material stylesheet -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="stylesheet" href="dist/bundle.css">
 </head>
 <body class="mdc-typography">
 <img class="logo"
-     src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg/1200px-Dungeons_%26_Dragons_5th_Edition_logo.svg.png"/>
+     src="https://i.ibb.co/Qc7M6SR/1200px-Dungeons-Dragons-5th-Edition-logo.png"/>
 <input type="file" id="selectFiles" value="Import"/>
 <button id="import-button" class="import-button mdc-button mdc-button--raised">
     <span class="mdc-button__label">Import</span>
@@ -20,11 +22,20 @@
     <span class="mdc-button__label">Export</span>
 </button>
 <div class="character-portrait">
-    <div class="picture-desc">PORTRET POSTACI</div>
+    <div class="upload-wrapper">
+        <i id="portrait-upload-icon" class="material-icons upload-icon">cloud_upload</i>
+        <div class="upload-desc">USTAW PORTRET POSTACI</div>
+    </div>
+
 </div>
+
 <div class="character-logo">
-    <div class="picture-desc">ZNAK/HERB</div>
+    <div class="upload-wrapper">
+        <i id="portrait-upload-icon" class="material-icons upload-icon">cloud_upload</i>
+        <div class="upload-desc">USTAW HERB/ZNAK</div>
+    </div>
 </div>
+
 <h3>CHARACTER RECORD SHEETS</h3>
 <div class="base-info-row">
     <div id="character-name-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
