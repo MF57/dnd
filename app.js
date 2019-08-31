@@ -592,6 +592,28 @@ function initDialogs() {
         }
     });
 
+    const portraitClear = document.getElementById("portrait-clear-icon");
+    portraitClear.addEventListener("click", () => {
+        character.portraitUrl = "";
+        portraitUrlInput.value = "";
+        const portrait = document.getElementById("character-portrait");
+        const portraitUploadWrapper = document.getElementById("character-portrait-upload-wrapper");
+        portrait.style.backgroundImage = "";
+        portraitUploadWrapper.style.display = "block";
+        localStorage.character = JSON.stringify(character);
+    });
+
+    const sygilClear = document.getElementById("sygil-clear-icon");
+    sygilClear.addEventListener("click", () => {
+        character.sygilUrl = "";
+        sygilUrlInput.value = "";
+        const sygil = document.getElementById("character-logo");
+        const sygilUploadWrapper = document.getElementById("character-logo-upload-wrapper");
+        sygil.style.backgroundImage = "";
+        sygilUploadWrapper.style.display = "block";
+        localStorage.character = JSON.stringify(character);
+    });
+
 
 
 }
