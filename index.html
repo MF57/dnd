@@ -12,6 +12,76 @@
     <link rel="stylesheet" href="dist/bundle.css">
 </head>
 <body class="mdc-typography">
+
+<div id="portrait-dialog" class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+            <h2 class="mdc-dialog__title" id="my-dialog-title">Portrait dialog</h2>
+            <div class="mdc-dialog__content" id="my-dialog-content">
+                Paste URL here
+                <div id="portrait-url-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+                    <input type="text" id="portrait-url" class="mdc-text-field__input">
+                    <div id="portrait-url-outline" class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="portrait-url" class="mdc-floating-label">URL</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="mdc-dialog__actions">
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+                    <span class="mdc-button__label">Disard</span>
+                </button>
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+                    <span class="mdc-button__label">Save</span>
+                </button>
+            </footer>
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>
+
+<div id="sygil-dialog" class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+            <h2 class="mdc-dialog__title" id="my-dialog-title">Sygil dialog</h2>
+            <div class="mdc-dialog__content" id="my-dialog-content">
+                Paste URL here
+                <div id="sygil-url-textfield" class="long-input mdc-text-field mdc-text-field--outlined">
+                    <input type="text" id="sygil-url" class="mdc-text-field__input">
+                    <div id="sygil-outline" class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="sygil-url" class="mdc-floating-label">URL</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="mdc-dialog__actions">
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+                    <span class="mdc-button__label">Disard</span>
+                </button>
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+                    <span class="mdc-button__label">Save</span>
+                </button>
+            </footer>
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>
+
+
 <img class="logo"
      src="https://i.ibb.co/Qc7M6SR/1200px-Dungeons-Dragons-5th-Edition-logo.png"/>
 <input type="file" id="selectFiles" value="Import"/>
@@ -21,17 +91,17 @@
 <button id="export-button" class="export-button mdc-button mdc-button--raised">
     <span class="mdc-button__label">Export</span>
 </button>
-<div class="character-portrait">
-    <div class="upload-wrapper">
+<div id="character-portrait" class="character-portrait">
+    <div id="character-portrait-upload-wrapper" class="upload-wrapper">
         <i id="portrait-upload-icon" class="material-icons upload-icon">cloud_upload</i>
         <div class="upload-desc">USTAW PORTRET POSTACI</div>
     </div>
 
 </div>
 
-<div class="character-logo">
-    <div class="upload-wrapper">
-        <i id="portrait-upload-icon" class="material-icons upload-icon">cloud_upload</i>
+<div id="character-logo" class="character-logo">
+    <div id="character-logo-upload-wrapper" class="upload-wrapper">
+        <i id="sygil-upload-icon" class="material-icons upload-icon">cloud_upload</i>
         <div class="upload-desc">USTAW HERB/ZNAK</div>
     </div>
 </div>
@@ -53,7 +123,7 @@
         <div id="player-name-outline" class="mdc-notched-outline">
             <div class="mdc-notched-outline__leading"></div>
             <div class="mdc-notched-outline__notch">
-                <label for="character-name" class="mdc-floating-label">Gracz</label>
+                <label for="player-name" class="mdc-floating-label">Gracz</label>
             </div>
             <div class="mdc-notched-outline__trailing"></div>
         </div>

@@ -3,6 +3,7 @@ import {MDCNotchedOutline} from '@material/notched-outline';
 import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
 import {MDCRipple} from '@material/ripple';
+import {MDCDialog} from '@material/dialog';
 
 
 /**
@@ -219,7 +220,8 @@ function importFile() {
         character = mergeDeep(character, JSON.parse(e.target.result));
         localStorage.character = JSON.stringify(character);
         console.log(character);
-        initInputs()
+        initInputs();
+        initDialogs();
     };
 
     fr.readAsText(files.item(0));
@@ -526,9 +528,80 @@ function initInputs() {
 
 }
 
+function initDialogs() {
+    const portraitDialog = new MDCDialog(document.querySelector('#portrait-dialog'));
+    const sygilDialog = new MDCDialog(document.querySelector('#sygil-dialog'));
+
+    const portraitDialogOpener = document.getElementById("portrait-upload-icon");
+    portraitDialogOpener.addEventListener("click", () => {
+        portraitDialog.open();
+    });
+
+    const sygilDialogOpener = document.getElementById("sygil-upload-icon");
+    sygilDialogOpener.addEventListener("click", () => {
+        sygilDialog.open();
+    });
+
+    const portraitUrlInput = new MDCTextField(document.getElementById("portrait-url-textfield"));
+    if (character.portraitUrl) {
+        portraitUrlInput.value = character.portraitUrl;
+        const portrait = document.getElementById("character-portrait");
+        const portraitUploadWrapper = document.getElementById("character-portrait-upload-wrapper");
+        portrait.style.backgroundImage = "url(" + character.portraitUrl + ")";
+        portraitUploadWrapper.style.display = "none";
+
+    }
+
+    const sygilUrlInput = new MDCTextField(document.getElementById("sygil-url-textfield"));
+    if (character.sygilUrl) {
+        sygilUrlInput.value = character.sygilUrl;
+        const sygil = document.getElementById("character-logo");
+        const sygilUploadWrapper = document.getElementById("character-logo-upload-wrapper");
+        sygil.style.backgroundImage = "url(" + character.sygilUrl + ")";
+        sygilUploadWrapper.style.display = "none";
+    }
+
+
+    portraitDialog.listen("MDCDialog:closed", (event) => {
+        if (event.detail.action === "yes") {
+            character.portraitUrl = portraitUrlInput.value;
+            const portrait = document.getElementById("character-portrait");
+            const portraitUploadWrapper = document.getElementById("character-portrait-upload-wrapper");
+            portrait.style.backgroundImage = "url(" + character.portraitUrl + ")";
+            portraitUploadWrapper.style.display = "none";
+            localStorage.character = JSON.stringify(character);
+        } else if (character.portraitUrl) {
+            portraitUrlInput.value = character.portraitUrl;
+        } else {
+            portraitUrlInput.value = "";
+        }
+    });
+
+    sygilDialog.listen("MDCDialog:closed", (event) => {
+        if (event.detail.action === "yes") {
+            character.sygilUrl = sygilUrlInput.value;
+            const sygil = document.getElementById("character-logo");
+            const sygilUploadWrapper = document.getElementById("character-logo-upload-wrapper");
+            sygil.style.backgroundImage = "url(" + character.sygilUrl + ")";
+            sygilUploadWrapper.style.display = "none";
+            localStorage.character = JSON.stringify(character);
+        } else if (character.sygilUrl) {
+            sygilUrlInput.value = character.sygilUrl;
+        } else {
+            sygilUrlInput.value = "";
+        }
+    });
+
+
+
+}
+
 
 document.getElementById("import-button").addEventListener("click", () => importFile());
 document.getElementById("export-button").addEventListener("click", () => exportFile("character.json"));
 
+
+
 initInputs();
+initDialogs();
 
